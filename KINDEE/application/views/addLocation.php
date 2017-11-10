@@ -46,28 +46,10 @@
         <?php 
         foreach($json as $value){
             echo $value->lat ."<br>";
+        }
         ?>
-        /*
-      var point = new google.maps.LatLng(
-                  parseFloat(<?php echo $value->lat ?>,
-                  parseFloat(<?php echo $value->lng ?>));
-
-        var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-         });
-         marker.addListener('click', function() {
-                infoWindow.setContent(infowincontent);
-                infoWindow.open(map, marker);
-              });
-
-              */
-        <?php
-                
-            }
-        ?>
-      };
+       
+      
 
 
 
