@@ -45,9 +45,9 @@
                   parseFloat(<?php echo $key->lat ?>),
                   parseFloat(<?php echo $key->lng ?>)
                   );
-    var type = <?= $key->type ?>;
-    var name = <?= $key->name ?>;
-    var address = <?= $key->address ?>;
+    var type = "<?= $key->type ?>";
+    var name ="<?= $key->name ?>";
+    var address = "<?= $key->address ?>";
     var infowincontent = document.createElement('div');
     var strong = document.createElement('strong');
     //strong.textContent = name;
@@ -57,7 +57,7 @@
     //text.textContent = address;
     //infowincontent.appendChild(text);
 
-    var icon = customLabel[<?= $key->type ?>] || {};
+    var icon = customLabel["<?= $key->type ?>"] || {};
     var marker = new google.maps.Marker({
                 map: map,
                 position: point,
