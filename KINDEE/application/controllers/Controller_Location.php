@@ -27,7 +27,7 @@ class Controller_Location extends CI_Controller {
         foreach($result->result() as $row){
             echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
         }
-		$this->load->view('addLocation');
+		//$this->load->view('addLocation');
     }
     public function getAllLocation(){
 
