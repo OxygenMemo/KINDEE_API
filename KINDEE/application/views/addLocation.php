@@ -50,12 +50,12 @@
     var address = <?= $key->address ?>
     var infowincontent = document.createElement('div');
     var strong = document.createElement('strong');
-    strong.textContent = name;
-    infowincontent.appendChild(strong);
-    infowincontent.appendChild(document.createElement('br'));
-    var text = document.createElement('text');
-    text.textContent = address;
-    infowincontent.appendChild(text);
+    //strong.textContent = name;
+    //infowincontent.appendChild(strong);
+    //infowincontent.appendChild(document.createElement('br'));
+    //var text = document.createElement('text');
+    //text.textContent = address;
+    //infowincontent.appendChild(text);
 
     var icon = customLabel[type] || {};
     var marker = new google.maps.Marker({
@@ -63,10 +63,10 @@
                 position: point,
                 label: icon.label
         });
-        marker.addListener('click', function() {
-                infoWindow.setContent(infowincontent);
-                infoWindow.open(map, marker);
-              });
+        //marker.addListener('click', function() {
+         //       infoWindow.setContent(infowincontent);
+           //     infoWindow.open(map, marker);
+             // });
 
 
         <?php
