@@ -25,8 +25,10 @@ class Controller_Location extends CI_Controller {
 
         $json = array();
         foreach($result->result() as $row){
-            echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
+            array_push($json,$row);
+            //echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
         }
+        echo $json;
 		//$this->load->view('addLocation');
     }
     public function getAllLocation(){
