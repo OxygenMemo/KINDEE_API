@@ -43,13 +43,19 @@
               strong.textContent = name
               infowincontent.appendChild(strong);
               infowincontent.appendChild(document.createElement('br'));
+
+      var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                label: icon.label
+              });
+
         <?php 
-        foreach($json as $value){
-            echo $value->lat ."<br>";
-        }
+            foreach($json as $key){
+                echo $key->id."<br>";
+            }
         ?>
-       
-      
+      };
 
 
 
