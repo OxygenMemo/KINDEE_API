@@ -38,8 +38,30 @@
         zoom: 12
       });
       var infoWindow = new google.maps.InfoWindow;
+      var infowincontent = document.createElement('div');
+      var strong = document.createElement('strong');
+              strong.textContent = name
+              infowincontent.appendChild(strong);
+              infowincontent.appendChild(document.createElement('br'));
         <?php 
-            foreach($json as $key){
+        foreach($json as $value){
+        ?>
+      var point = new google.maps.LatLng(
+                  parseFloat(<?php echo $value->lat ?>,
+                  parseFloat(<?php echo $value->lng ?>));
+
+        var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                label: icon.label
+         });
+         marker.addListener('click', function() {
+                infoWindow.setContent(infowincontent);
+                infoWindow.open(map, marker);
+              });
+
+
+        <?php
                 
             }
         ?>
