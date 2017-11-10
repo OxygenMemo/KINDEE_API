@@ -40,7 +40,7 @@
       var infoWindow = new google.maps.InfoWindow;
         <?php 
             foreach($json as $key){
-                
+                echo $key->id;
             }
         ?>
       };
