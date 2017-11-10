@@ -28,8 +28,8 @@ class Controller_Location extends CI_Controller {
             array_push($json,$row);
             //echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
         }
-        echo $json;
-		//$this->load->view('addLocation');
+        $data['json']=$json;
+		$this->load->view('addLocation',$data);
     }
     public function getAllLocation(){
 
