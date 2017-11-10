@@ -21,7 +21,7 @@ class Controller_Location extends CI_Controller {
 	public function index()
 	{   
         $location=$this->load->model("Location");
-        $result=$location->getAllLocation();
+        $result=$location->Location->getAllLocation();
 
         $json = array();
         foreach($result->result() as $row){
