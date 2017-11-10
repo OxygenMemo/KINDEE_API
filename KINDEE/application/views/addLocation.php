@@ -38,21 +38,9 @@
         zoom: 12
       });
       var infoWindow = new google.maps.InfoWindow;
-      var infowincontent = document.createElement('div');
-      var strong = document.createElement('strong');
-              strong.textContent = name
-              infowincontent.appendChild(strong);
-              infowincontent.appendChild(document.createElement('br'));
-
-      var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-              });
-
         <?php 
             foreach($json as $key){
-                echo $key->id."<br>";
+                
             }
         ?>
       };
