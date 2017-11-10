@@ -45,9 +45,9 @@
                   parseFloat(<?php echo $key->lat ?>),
                   parseFloat(<?php echo $key->lng ?>)
                   );
-    var type = <?= $key->type ?>
-    var name = <?= $key->name ?>
-    var address = <?= $key->address ?>
+    var type = <?= $key->type ?>;
+    var name = <?= $key->name ?>;
+    var address = <?= $key->address ?>;
     var infowincontent = document.createElement('div');
     var strong = document.createElement('strong');
     //strong.textContent = name;
