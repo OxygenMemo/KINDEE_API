@@ -31,7 +31,6 @@
         label: 'B'
       }
     };
-
       function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(-33.863276, 151.207977),
@@ -39,13 +38,12 @@
       });
       var infoWindow = new google.maps.InfoWindow;
       <?php 
-         
         foreach($json as $key){
             echo "console.log($key->id);";
       ?>
       var point = new google.maps.LatLng(
-                  parseFloat($key->lat),
-                  parseFloat($key->lng)
+                  parseFloat(<?php echo $key->lat ?>),
+                  parseFloat(<?php echo $key->lng ?>)
                   );
 
       var icon = customLabel[type] || {};
