@@ -45,7 +45,9 @@
               infowincontent.appendChild(document.createElement('br'));
         <?php 
         foreach($json as $value){
+            echo $value->lat ."<br>";
         ?>
+        /*
       var point = new google.maps.LatLng(
                   parseFloat(<?php echo $value->lat ?>,
                   parseFloat(<?php echo $value->lng ?>));
@@ -60,7 +62,7 @@
                 infoWindow.open(map, marker);
               });
 
-
+              */
         <?php
                 
             }
