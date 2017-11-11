@@ -62,7 +62,7 @@
       setInterval(getCurrentLocation(),3000);
       console.log("lat : " + currentPosition.lat + " lng : " + currentPosition.lng)
     }// end function autoload Current
-    
+    autoLoadCurrentLocation();
 
     
     </script>
