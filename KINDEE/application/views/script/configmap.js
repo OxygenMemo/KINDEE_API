@@ -11,5 +11,5 @@
     }
     
     let initMap = () => { // initiation map
-        map = new google.maps.Map(document.getElementById('map'),positionInit)
+        map = new google.maps.Map(document.getElementById('map'),mapInitOption)
     } // end function initMap
