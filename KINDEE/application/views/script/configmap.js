@@ -7,7 +7,7 @@
     //13.312277, 100.532970 center of thailand 
     let mapInitOption={
         center : positionInit, 
-        zoom : 0
+        zoom : 1
     }
     
     let initMap = () => { // initiation map
