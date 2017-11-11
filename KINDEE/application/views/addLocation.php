@@ -60,7 +60,7 @@
 
     function autoLoadCurrentLocation(){ // auto load current location
       setInterval(getCurrentLocation(),3000);
-      console.log("lat : " + currentPosition.lat + " lng : " + currentPosition.lng)
+      console.log("lat : " + currentPosition.lat + " lng : " + currentPosition.lng);
     }// end function autoload Current
     //setInterval(getCurrentLocation(),3000);// autoload  Current Location
     autoLoadCurrentLocation();
