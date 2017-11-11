@@ -31,7 +31,7 @@
     //13.312277, 100.532970 center of thailand 
     var mapInitOption={
         center : positionInit, 
-        zoom : 5
+        zoom : 8
     };
     
     function initMap(){ // initiation map
