@@ -67,6 +67,19 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
       }
+        google.maps.event.addListener(map, "click", function (e) {
+        //lat and lng is available in e object
+          var clickPo={
+            lat : e.latLng.lat(),
+            lng : e.latLng.lng()
+          } 
+          let mark = new google.maps.Marker({
+              position : clickPo,
+              map : map
+              //icon : icon.img
+            })
+          
+        }); 
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
