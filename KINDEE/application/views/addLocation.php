@@ -27,6 +27,9 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow;
+      var icon = {
+        img: "http://www.10wallpaper.com/wallpaper/medium/1710/Beach_tropical_island-2017_High_Quality_Wallpaper_medium.jpg"
+      }
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
@@ -42,10 +45,15 @@
               lng: position.coords.longitude
             };
 
+            let mark = new google.map.mark({
+              position : pos,
+              map : map,
+              icon : icon.img
+            })
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
-            map.setCenter(pos);
+            map.setCenter(mark);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
