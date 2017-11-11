@@ -44,17 +44,18 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            /*
-            let mark = new google.map.mark({
+            
+            let mark = new google.map.Marker({
               position : pos,
               map : map,
               icon : icon.img
             })
-            */
+            /*
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
+            */
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
