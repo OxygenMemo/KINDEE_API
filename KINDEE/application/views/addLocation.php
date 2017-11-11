@@ -21,7 +21,23 @@
   </head>
   <body>
     <div id="map"></div>
-    <script src="./script/configmap.js"></script>
+    <script>
+    
+    let map ;
+    let positionInit={
+        lat: 13.312277, 
+        lng: 100.532970
+    }
+    //13.312277, 100.532970 center of thailand 
+    let mapInitOption={
+        center : positionInit, 
+        zoom : 1
+    }
+    
+    let initMap = () => { // initiation map
+        map = new google.maps.Map(document.getElementById('map'),mapInitOption)
+    } // end function initMap
+    </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DRU-l__VeRBRsedcmeG06kMlrvYNd90&callback=initMap">
     </script>
