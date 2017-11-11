@@ -44,12 +44,13 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
+            /*
             let mark = new google.map.mark({
               position : pos,
               map : map,
               icon : icon.img
             })
+            */
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
