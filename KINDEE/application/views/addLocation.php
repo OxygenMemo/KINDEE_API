@@ -38,8 +38,8 @@
         map = new google.maps.Map(document.getElementById('map'),mapInitOption)
     } // end function initMap
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXvLP913yXWox7MnNDgm7sVwtDpqZpCTM&callback=initMap">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCBwCpHs2aCf76pmnesLTHyCfa5KLd9YyY &callback=initMap"
+    async defer></script>
+
   </body>
 </html>
