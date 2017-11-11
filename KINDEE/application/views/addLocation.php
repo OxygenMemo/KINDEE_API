@@ -27,20 +27,20 @@
     var positionInit={
       lat : 13.312277,
       lng : 100.532970
-    }
+    };
     //13.312277, 100.532970 center of thailand 
     var mapInitOption={
         center : positionInit, 
         zoom : 1
-    }
+    };
     
     function initMap(){ // initiation map
-        map = new google.maps.Map(document.getElementById('map'),mapInitOption)
+        map = new google.maps.Map(document.getElementById('map'),mapInitOption);
     } // end function initMap
     </script>
 
     <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgokaRckiDebtd66ozVnQqskRnZAqlobo-JZEo&callback=initMap" async defer>
+    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCo9tZvO6CghsfvS1H8mRF3TZkpEki3-DQ &callback=initMap" async defer>
     </script>
 
   </body>
