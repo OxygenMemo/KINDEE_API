@@ -57,7 +57,7 @@
           alert("Error: Your browser doesn\'t support geolocation.");
       }
     }// end function getCurrentLocation
-    alert(getCurrentLocation());
+    alert(getCurrentLocation().lat);
     </script>
 
     <script 
