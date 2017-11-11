@@ -56,6 +56,7 @@
             infoWindow.open(map);
             map.setCenter(pos);
             */
+            map.setCenter(pos)
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
