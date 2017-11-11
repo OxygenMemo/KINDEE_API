@@ -48,7 +48,7 @@
             let mark = new google.maps.Marker({
               position : pos,
               map : map,
-              icon : icon.img
+              icon : icon.img.icon
             })
             /*
             infoWindow.setPosition(pos);
