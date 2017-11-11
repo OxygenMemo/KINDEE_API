@@ -24,6 +24,7 @@
     <script>
     
     var map ;
+    var zoomCountrySize=9;
     var positionInit={
       lat : 13.312277,
       lng : 100.532970
@@ -31,7 +32,7 @@
     //13.312277, 100.532970 center of thailand 
     var mapInitOption={
         center : positionInit, 
-        zoom : 8
+        zoom : zoomCountrySize
     };
     
     function initMap(){ // initiation map
