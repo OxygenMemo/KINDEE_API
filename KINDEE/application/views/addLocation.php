@@ -62,10 +62,10 @@ function callback(results, status) {
   }
 }
       <?php 
-        foreach($json as $key){
-            echo "console.log($key->id);";
+        //foreach($json as $key){
+            //echo "console.log($key->id);";
       
-            }
+          //  }
         ?>
       
       
