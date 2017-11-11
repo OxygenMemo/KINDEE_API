@@ -48,6 +48,7 @@
             lat : position.coords.latitude,
             lng : position.coords.longitude
           }
+          doSomeThing();
           
         },function(){
             alert("Error: The Geolocation service failed");
@@ -58,11 +59,11 @@
       }
     }// end function getCurrentLocation
 
-    function autoLoadCurrentLocation(){ // auto load current location
-      setInterval(getCurrentLocation(),3000);
+    function doSomeThing(){ 
+      
       console.log("lat : " + currentPosition.lat + " lng : " + currentPosition.lng)
-    }// end function autoload Current
-    autoLoadCurrentLocation();
+    }
+    setInterval(getCurrentLocation(),3000);// autoload  CurrentLocation
 
     
     </script>
