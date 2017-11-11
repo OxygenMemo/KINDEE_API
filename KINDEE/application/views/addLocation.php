@@ -45,7 +45,7 @@
               lng: position.coords.longitude
             };
             
-            let mark = new google.map.Marker({
+            let mark = new google.maps.Marker({
               position : pos,
               map : map,
               icon : icon.img
