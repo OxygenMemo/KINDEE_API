@@ -48,7 +48,7 @@
             let mark = new google.maps.Marker({
               position : pos,
               map : map,
-              icon : icon.img.icon
+              icon : icon.img
             })
             /*
             infoWindow.setPosition(pos);
@@ -56,6 +56,7 @@
             infoWindow.open(map);
             map.setCenter(pos);
             */
+            map.
             map.setCenter(pos)
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
