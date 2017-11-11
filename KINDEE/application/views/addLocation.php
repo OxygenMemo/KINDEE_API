@@ -59,7 +59,7 @@
     }// end function getCurrentLocation
 
     function autoLoadCurrentLocation(){ // auto load current location
-      setInterval(getCurrentLocation(),3000);
+      setInterval(getCurrentLocation,3000);
       console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
     getCurrentLocation();
