@@ -73,11 +73,12 @@
             lat : e.latLng.lat(),
             lng : e.latLng.lng()
           } 
-          let mark = new google.maps.Marker({
-              position : clickPo,
-              map : map
+          alert(e.latLng.lat())
+          //let mark = new google.maps.Marker({
+          //    position : clickPo,
+          //   map : map
               //icon : icon.img
-            })
+          //  })
           
         }); 
 
