@@ -43,10 +43,6 @@
         map.panTo(latLng);
       }
       infoWindow = new google.maps.InfoWindow;
-      var shape = {
-          coords: [1, 1, 1, 20, 18, 20, 18, 1],
-          type: 'poly'
-        };
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -55,12 +51,13 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+            /*
             var marker = new google.maps.Marker({
               position: pos,
               map: map,
               icon : "./img_pin/mepin.png",
-              shape : shape
             });
+            */
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             
