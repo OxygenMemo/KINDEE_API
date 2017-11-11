@@ -24,10 +24,7 @@
     <script>
     
     let map ;
-    let positionInit={
-        lat: 13.312277, 
-        lng: 100.532970
-    }
+    let positionInit=new google.maps.LatLng(13.312277,100.532970)
     //13.312277, 100.532970 center of thailand 
     let mapInitOption={
         center : positionInit, 
