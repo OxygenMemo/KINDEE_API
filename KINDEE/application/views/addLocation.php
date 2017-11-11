@@ -67,9 +67,11 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
       }
-      google.maps.event.addListener(map, 'click', function( event ){
-        alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
-      });
+      google.maps.event.addListener(map, 'click', function(event) {
+        
+            marker = new google.maps.Marker({position: event.latLng, map: map});
+        
+        });
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
