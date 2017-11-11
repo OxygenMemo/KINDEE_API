@@ -17,6 +17,7 @@
         padding: 0;
       }
     </style>
+    <script src='//maps.googleapis.com/maps/api/js'></script>
   </head>
   <body>
     <div id="map"></div>
