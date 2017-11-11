@@ -12,7 +12,7 @@
     }
     /* Optional: Makes the sample page fill the window. */
     html, body {
-      height: 100%;
+      height: 100%;s
       margin: 0;
       padding: 0;
     }
