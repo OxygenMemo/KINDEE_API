@@ -23,7 +23,8 @@
     <div id="map"></div>
     <script>
     
-    var map ;
+    var map;
+    var currentPosition; // user location now update with 
     var zoomCountrySize=7;
     var positionInit={
       lat : 13.312277,
@@ -36,8 +37,21 @@
     };
     
     function initMap(){ // initiation map
-        map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+      console.log('Google Maps API version: ' + google.maps.version);
+      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
     } // end function initMap
+    alert(getCurrentLocation());
+    function getCurrentLocation(){ //get Location now user
+      if(navigator){ // check permission
+        navigator.geolocation.getCurrentPosition(function(position){
+          var pos = {
+            lat : position.coords.latitude,
+            lng : position.coords.longitude
+          }
+          return pos;
+        });
+      }//end if
+    }// end function getCurrentLocation
     </script>
 
     <script 
