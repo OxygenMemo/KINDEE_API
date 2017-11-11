@@ -52,6 +52,7 @@
         });
       }//end if
     }// end function getCurrentLocation
+    alert(getCurrentLocation());
     </script>
 
     <script 
