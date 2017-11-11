@@ -47,8 +47,8 @@
             
             let mark = new google.maps.Marker({
               position : pos,
-              map : map,
-              icon : icon.img
+              map : map
+              //icon : icon.img
             })
             /*
             infoWindow.setPosition(pos);
@@ -56,14 +56,15 @@
             infoWindow.open(map);
             map.setCenter(pos);
             */
-            //map.
+            map.setZoom(12)
             map.setCenter(pos)
+            
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {
           // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+            handleLocationError(false, infoWindow, map.getCenter());
         }
       }
 
