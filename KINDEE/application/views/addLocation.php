@@ -44,11 +44,11 @@
     function getCurrentLocation(){ //get Location now user
       if(navigator){ // check permission
         navigator.geolocation.getCurrentPosition(function(position){
-          var pos = {
+          currentPosition = {
             lat : position.coords.latitude,
             lng : position.coords.longitude
           }
-          console.log(pos.lat)
+          
         },function(){
             alert("Error: The Geolocation service failed");
           }
@@ -57,7 +57,12 @@
           alert("Error: Your browser doesn\'t support geolocation.");
       }
     }// end function getCurrentLocation
+
+    function autoLoadCurrentLocation(){ // auto load current location
+      setInterval(getCurrentLocation(),3000);
+    }// end function autoload Current
     getCurrentLocation();
+
     
     </script>
 
