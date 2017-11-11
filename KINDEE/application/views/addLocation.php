@@ -21,8 +21,7 @@
   </head>
   <body>
     <div id="map"></div>
-    <script>
-    </script>
+    <script src="./script/configmap.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DRU-l__VeRBRsedcmeG06kMlrvYNd90&callback=initMap">
     </script>
