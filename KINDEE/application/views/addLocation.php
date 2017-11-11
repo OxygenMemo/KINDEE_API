@@ -23,31 +23,22 @@
     <div id="map"></div>
     <script>
       function initMap() {
-        var myLatlng = {lat: -25.363, lng: 131.044};
-
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
-          center: myLatlng
+          center: {lat: -25.363882, lng: 131.044922 }
         });
 
+        map.addListener('click', function(e) {
+          placeMarkerAndPanTo(e.latLng, map);
+        });
+      }
+
+      function placeMarkerAndPanTo(latLng, map) {
         var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Click to zoom'
+          position: latLng,
+          map: map
         });
-
-        map.addListener('center_changed', function() {
-          // 3 seconds after the center of the map has changed, pan back to the
-          // marker.
-          window.setTimeout(function() {
-            map.panTo(marker.getPosition());
-          }, 3000);
-        });
-
-        marker.addListener('click', function() {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-        });
+        map.panTo(latLng);
       }
 
     </script>
