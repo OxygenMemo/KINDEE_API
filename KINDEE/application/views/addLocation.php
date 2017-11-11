@@ -40,7 +40,7 @@
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
     } // end function initMap
-    alert(getCurrentLocation());
+    
     function getCurrentLocation(){ //get Location now user
       if(navigator){ // check permission
         navigator.geolocation.getCurrentPosition(function(position){
@@ -57,7 +57,9 @@
           alert("Error: Your browser doesn\'t support geolocation.");
       }
     }// end function getCurrentLocation
-    alert(getCurrentLocation().lat);
+    currentPosition=getCurrentLocation();
+    alert(currentPosition.lat);
+    console.log(currentPosition.lat);
     </script>
 
     <script 
