@@ -31,44 +31,41 @@
         label: 'B'
       }
     };
-      function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(-33.863276, 151.207977),
-        zoom: 12
-      });
-      var infoWindow = new google.maps.InfoWindow;
+    var map;
+    var service;
+    var infowindow;
+    
+    function initialize() {
+      var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+    
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+    
+      var request = {
+        location: pyrmont,
+        radius: '500',
+        type: ['restaurant']
+      };
+    
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    }
+    
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          createMarker(results[i]);
+        }
+      }
+    }
       <?php 
         foreach($json as $key){
             echo "console.log($key->id);";
       ?>
-      var point = new google.maps.LatLng(
-                  parseFloat(<?php echo $key->lat ?>),
-                  parseFloat(<?php echo $key->lng ?>)
-                  );
-    var type = "<?= $key->type ?>";
-    var name ="<?= $key->name ?>";
-    var address = "<?= $key->address ?>";
-    var infowincontent = document.createElement('div');
-    var strong = document.createElement('strong');
-    //strong.textContent = name;
-    //infowincontent.appendChild(strong);
-    //infowincontent.appendChild(document.createElement('br'));
-    //var text = document.createElement('text');
-    //text.textContent = address;
-    //infowincontent.appendChild(text);
-
-    var icon = customLabel["<?= $key->type ?>"] || {};
-    var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-        });
-        //marker.addListener('click', function() {
-         //       infoWindow.setContent(infowincontent);
-           //     infoWindow.open(map, marker);
-             // });
-
-
+      
         <?php
             }
         ?>
