@@ -49,8 +49,13 @@
             lng : position.coords.longitude
           }
           return pos;
-        });
-      }//end if
+        },function(){
+            alert("Error: The Geolocation service failed");
+          }
+        );
+      }else{//end if
+          alert("Error: Your browser doesn\'t support geolocation.");
+      }
     }// end function getCurrentLocation
     alert(getCurrentLocation());
     </script>
