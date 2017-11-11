@@ -56,6 +56,7 @@
             infoWindow.setContent('Location found.');
             
             infoWindow.open(map);
+            
             map.setZoom(4);
             map.setCenter(pos);
           }, function() {
