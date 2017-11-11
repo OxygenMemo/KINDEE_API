@@ -67,20 +67,9 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
       }
-        google.maps.event.addListener(map, "click", function (e) {
-        //lat and lng is available in e object
-          var clickPo={
-            lat : e.latLng.lat(),
-            lng : e.latLng.lng()
-          } 
-          alert(e.latLng.lat())
-          //let mark = new google.maps.Marker({
-          //    position : clickPo,
-          //   map : map
-              //icon : icon.img
-          //  })
-          
-        }); 
+      google.maps.event.addListener(map, 'click', function( event ){
+        alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
+      });
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
