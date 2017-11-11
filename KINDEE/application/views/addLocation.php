@@ -56,7 +56,7 @@
             infoWindow.setContent('Location found.');
             
             infoWindow.open(map);
-            
+
             map.setZoom(4);
             map.setCenter(pos);
           }, function() {
@@ -79,7 +79,7 @@
 
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiCH89cXrEofWGXV4OjTk6nF3LXIZ2HDs&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG9pEKaTTVtME3eYOP4MCfKQgmMbUB8UE&callback=initMap">
     </script>
   </body>
 </html>
