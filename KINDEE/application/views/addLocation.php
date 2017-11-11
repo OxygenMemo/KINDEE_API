@@ -48,7 +48,7 @@
             lat : position.coords.latitude,
             lng : position.coords.longitude
           }
-          return pos;
+          console.log(pos.lat)
         },function(){
             alert("Error: The Geolocation service failed");
           }
@@ -57,9 +57,8 @@
           alert("Error: Your browser doesn\'t support geolocation.");
       }
     }// end function getCurrentLocation
-    currentPosition=getCurrentLocation();
-    alert(currentPosition.lat);
-    console.log(currentPosition.lat);
+    getCurrentLocation();
+    
     </script>
 
     <script 
