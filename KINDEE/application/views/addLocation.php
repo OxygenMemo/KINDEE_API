@@ -23,15 +23,15 @@
     <div id="map"></div>
     <script>
     
-    let map ;
-    let positionInit=new google.maps.LatLng(13.312277,100.532970)
+    var map ;
+    var positionInit=new google.maps.LatLng(13.312277,100.532970)
     //13.312277, 100.532970 center of thailand 
-    let mapInitOption={
+    var mapInitOption={
         center : positionInit, 
         zoom : 1
     }
     
-    let initMap = () => { // initiation map
+    function initMap(){ // initiation map
         map = new google.maps.Map(document.getElementById('map'),mapInitOption)
     } // end function initMap
     </script>
