@@ -56,7 +56,7 @@
             infoWindow.setContent('Location found.');
             
             infoWindow.open(map);
-            map.setZoom(4)
+            map.setZoom(4);
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
