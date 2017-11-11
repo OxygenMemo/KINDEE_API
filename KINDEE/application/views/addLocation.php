@@ -24,7 +24,7 @@
     <script>
     
     var map ;
-    var zoomCountrySize=9;
+    var zoomCountrySize=7;
     var positionInit={
       lat : 13.312277,
       lng : 100.532970
