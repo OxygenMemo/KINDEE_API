@@ -44,7 +44,7 @@
     var map;
     var markCurrent = null;
     
-    //var currentPosition={lat:0,lng:0}; // user location now update with 
+    var currentPosition={lat:0,lng:0}; // user location now update with 
     var zoom = {
       countrysize : 7,
       homesize : 15
@@ -82,18 +82,19 @@
     
 
     function autoLoadCurrentLocation(){ // auto load current location
-      navigator.geolocation.getCurrentPosition(showlocation);
+      console.log(navigator.geolocation.getCurrentPosition(showlocation));
       //console.log("gg:"+currentPosition.lat+" "+currentPosition.lng);
       
       
       
     }// end function autoload Current
     function showlocation(position){
-      var currentPosition = {
+      currentPosition = {
         lat : position.coords.latitude,
         lng : position.coords.longitude
       }
       console.log(position.coords.latitude +" "+ currentPosition.lat);
+      return position.coords.latitude;
     }
     function addmarker(location,map){
         
@@ -106,11 +107,9 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       autoLoadCurrentLocation();
-      console.log(currentPosition.lat);
+      //console.log(currentPosition.lat);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
-
-      
       google.maps.event.addListener(map, 'click', function(event) {
         addmarker(event.latLng,map);
       });
