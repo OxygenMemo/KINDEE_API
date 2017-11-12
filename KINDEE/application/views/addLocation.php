@@ -71,9 +71,8 @@
 
       //console.log(currentPosition.lat);
       google.maps.event.addListener(map, 'click', function(event) {
-          addmarker(event.latLng,map);
+        marker = new google.maps.Marker({position: event.latLng, map: map});
       });
-
       
     } // end function initMap
 
