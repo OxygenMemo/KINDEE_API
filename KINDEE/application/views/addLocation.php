@@ -65,9 +65,9 @@
       console.log(currentPosition.lat+" "+currentPosition.lng);
       markCurrent = new google.maps.Marker({
         position : markCurrent,
-        title : "me"
+        title : "me",
+        map : map
       });
-      markCurrent.setMap(map);
     }// end function autoload Current
     function showlocation(position){
       currentPosition = {
