@@ -55,17 +55,20 @@
       lng : 100
     };
     //13.312277, 100.532970 center of thailand 
-    var mapInitOption={
-        center : positionInit, 
-        zoom : zoom.countrysize
-    };
+   // var mapInitOption={
+   //     center : positionInit, 
+    //    zoom : zoom.countrysize
+    //};
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
 
       navigator.geolocation.getCurrentPosition(function(position,mapInitOption){
-          mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
-          mapInitOption.zoom = zoom.homesize;          
+          mapInitOption.center = {
+            center : zoom.homesize,
+            position:{lat : position.coords.latitude,lng : position.coords.longitude}
+          };
+                    
       });
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
