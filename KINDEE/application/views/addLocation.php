@@ -29,7 +29,7 @@
   <body>
     <div class="container">  
       <div class="col-sm-12">
-        f
+        
         <div class="col-sm-10 sizemap">
           <div id="map"></div>
         </div>
