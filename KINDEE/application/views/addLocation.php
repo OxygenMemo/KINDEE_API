@@ -70,7 +70,6 @@
     }
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-      autoLoadCurrentLocation();
 
       navigator.geolocation.getCurrentPosition(function(position){
           mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
