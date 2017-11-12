@@ -61,17 +61,7 @@
     };
     
     
-    function initMap(){ // initiation map
-      console.log('Google Maps API version: ' + google.maps.version);
-      autoLoadCurrentLocation();
-      console.log(currentPosition.lat);
-      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
-
-      
-      google.maps.event.addListener(map, 'click', function(event) {
-        addmarker(event.latLng,map);
-      });
-    } // end function initMap
+    
     
     function getCurrentLocation(){ //get Location now user
       if(navigator){ // check permission
@@ -113,7 +103,17 @@
           });
         
     }
-    
+    function initMap(){ // initiation map
+      console.log('Google Maps API version: ' + google.maps.version);
+      autoLoadCurrentLocation();
+      //console.log(currentPosition.lat);
+      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+
+      
+      google.maps.event.addListener(map, 'click', function(event) {
+        addmarker(event.latLng,map);
+      });
+    } // end function initMap
     
     
     //alert(currentPosition.lat);
