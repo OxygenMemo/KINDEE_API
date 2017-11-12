@@ -62,7 +62,7 @@
     lat =1;
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-      var mapInitOption;
+      
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
           lat = 1
