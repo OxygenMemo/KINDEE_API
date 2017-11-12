@@ -80,14 +80,12 @@
       }
     }
     function changeMarkerCurrentPosition(location,map){
-        if(markCurrent != null){
-          markCurrent.setMap(null);
-        }else{
+        
           markCurrent = new google.maps.Marker({
             position : location,
             map : map
           });
-        }
+        
     }
     
     
