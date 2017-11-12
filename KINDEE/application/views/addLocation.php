@@ -63,10 +63,12 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       var mapInitOption;
-      navigator.geolocation.getCurrentPosition(function(position){
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
           lat = 1
                     
-      });
+        });
+      }
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       //console.log(currentPosition.lat);
