@@ -64,6 +64,7 @@
       console.log('Google Maps API version: ' + google.maps.version);
       getCurrentLocation();
       LoadCurrentLocation();
+      console.log(currentPosition.lat)
       mapInitOption={
         center : currentPosition, 
         zoom : zoom.homesize
