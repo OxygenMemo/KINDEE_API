@@ -44,7 +44,7 @@
     var map;
     var markCurrent = null;
     
-    let currentPosition={lat:0,lng:0}; // user location now update with 
+    var currentPosition={lat:0,lng:0}; // user location now update with 
     var zoom = {
       countrysize : 7,
       homesize : 15
@@ -95,7 +95,6 @@
       
     }
     function addmarker(location,map){
-        
           var mark = new google.maps.Marker({
             position : location,
             map : map
@@ -105,7 +104,11 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       autoLoadCurrentLocation();
-      console.log(currentPosition.lat);
+
+      navigator.geolocation.getCurrentPosition(function(position){
+          mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude}
+      });
+      //console.log(currentPosition.lat);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       google.maps.event.addListener(map, 'click', function(event) {
