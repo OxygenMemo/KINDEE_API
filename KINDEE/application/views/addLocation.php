@@ -45,11 +45,7 @@
 
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(setCurrentLocation);//get location
-      markCurrent = new google.maps.Marker({
-        title : "me",
-        position : currentPosition
-      });
-      markCurrent.setMap(map);
+      
       
     }// end function autoload Current
     function setCurrentLocation(position){
@@ -62,7 +58,11 @@
     setInterval(function(){autoLoadCurrentLocation()},3000);// 
     setInterval(function(){console.log(currentPosition.lat+" "+currentPosition.lng)},3000);
     //alert(currentPosition.lat);
-
+     markCurrent = new google.maps.Marker({
+        title : "me",
+        position : currentPosition
+      });
+      markCurrent.setMap(map);
     
     </script>
 
