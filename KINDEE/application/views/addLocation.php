@@ -63,7 +63,7 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
 
-      navigator.geolocation.getCurrentPosition(function(position){
+      navigator.geolocation.getCurrentPosition(function(position,mapInitOption){
           mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
           mapInitOption.zoom = zoom.homesize;          
       });
