@@ -41,33 +41,19 @@
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
     } // end function initMap
     
-    function getCurrentLocation(){ //get Location now user
-      if(navigator){ // check permission
-
-        navigator.geolocation.getCurrentPosition(function(position){
-          console.log("lat : "+position.coords.latitude+" lng : "+position.coords.longitude)
-          currentPosition = {
-            lat : position.coords.latitude,
-            lng : position.coords.longitude
-          }
-        },function(){
-            alert("Error: The Geolocation service failed");
-          }
-        );
-      }else{//end if
-          alert("Error: Your browser doesn\'t support geolocation.");
-      }
-    }// end function getCurrentLocation
 
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(showlocation);
       //console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
     function showlocation(position){
-      console.log(position.coords.latitude);
+      currentPosition = { 
+        lat : position.coords.latitude,
+        lng : position.coords.longitude
+        };
     }
-    setInterval(function(){autoLoadCurrentLocation()},1000);
-    
+    setInterval(function(){autoLoadCurrentLocation()},3000);
+    setInterval(function(){console.log(currentPosition.lat+" "+currentPosition.lng)},3000);
     //alert(currentPosition.lat);
 
     
