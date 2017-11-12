@@ -67,15 +67,16 @@
           mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
           mapInitOption.zoom = zoom.homesize;
           map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+          google.maps.event.addListener(map, 'click', function(event) {
+          addmarker(event.latLng,map);
+        });
       });
       //console.log(currentPosition.lat);
       
 
-      //google.maps.event.addListener(map, 'click', function(event) {
-        //addmarker(event.latLng,map);
-      //});
+      
     } // end function initMap
-    
+
     function addmarker(location,map){
           var mark = new google.maps.Marker({
             position : location,
