@@ -90,9 +90,10 @@
     }// end function autoload Current
     function showlocation(position){
       currentPosition = {
-        lat : position.coords.lat,
-        lng : position.coords.lng
+        lat : position.coords.latitude,
+        lng : position.coords.longitude
       }
+      console.log(position.coords.latitude +" "+ currentPosition.lat);
     }
     function addmarker(location,map){
         
