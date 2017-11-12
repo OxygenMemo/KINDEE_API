@@ -53,6 +53,7 @@
     }// end function getCurrentLocation
 
     function setCurrentPosition(position){
+      alert(position.lat);
       currentPosition = {
             lat : position.coords.latitude,
             lng : position.coords.longitude
