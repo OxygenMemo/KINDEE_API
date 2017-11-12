@@ -58,12 +58,13 @@
     setInterval(function(){autoLoadCurrentLocation()},3000);// 
     setInterval(function(){console.log(currentPosition.lat+" "+currentPosition.lng)},3000);
     //alert(currentPosition.lat);
+    /*
      markCurrent = new google.maps.Marker({
         title : "me",
         position : currentPosition
       });
       markCurrent.setMap(map);
-    
+    */
     </script>
 
     <script 
