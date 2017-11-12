@@ -40,13 +40,12 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
-      var myLatLng = {lat: 13.290297599999999, lng: 100.9445334};
+      var marker = new google.maps.Marker({
+        position: positionInit,
+        map: map,
+        title: 'Hello World!'
+    });
 
-      markCurrent = new google.maps.Marker({
-        position : myLatlng,
-        title : "me",
-        map : map
-      });
     } // end function initMap
     
     function getCurrentLocation(){ //get Location now user
@@ -72,6 +71,7 @@
       console.log(currentPosition.lat+" "+currentPosition.lng);
       
       
+      
     }// end function autoload Current
     function showlocation(position){
       currentPosition = {
@@ -79,6 +79,7 @@
         lng : position.coords.longitude
       }
     }
+    //function 
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},3000);
     
