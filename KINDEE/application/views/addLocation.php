@@ -58,9 +58,10 @@
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
       getCurrentLocation();
-      
+      mapInitOption.center = currentPosition;
+      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+
       
       google.maps.event.addListener(map, 'click', function(event) {
         addmarker(event.latLng,map);
