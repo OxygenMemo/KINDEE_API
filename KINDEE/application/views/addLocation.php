@@ -21,6 +21,10 @@
   </head>
   <body>
     <div id="map"></div>
+    <form>
+        <input type="text">
+    </form>
+
     <script>
     
     var map;
@@ -42,7 +46,7 @@
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
       getCurrentLocation();
-      setInterval(function(){autoLoadCurrentLocation()},3000);
+      
       
       google.maps.event.addListener(map, 'click', function(event) {
         addmarker(event.latLng,map);
