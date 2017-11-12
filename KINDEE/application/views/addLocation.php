@@ -60,11 +60,12 @@
         zoom : zoom.countrysize
     };
     
+    
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       getCurrentLocation();
-      LoadCurrentLocation();
-      console.log(currentPosition.lat)
+      autoLoadCurrentLocation();
+      console.log(currentPosition.lat);
       mapInitOption={
         center : currentPosition, 
         zoom : zoom.homesize
@@ -95,7 +96,7 @@
     }// end function getCurrentLocation
     
 
-    function LoadCurrentLocation(){ // auto load current location
+    function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(showlocation);
       console.log(currentPosition.lat+" "+currentPosition.lng);
       
