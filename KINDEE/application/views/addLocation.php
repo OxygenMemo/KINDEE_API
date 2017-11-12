@@ -63,10 +63,10 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
 
-      navigator.geolocation.getCurrentPosition(function(position,mapInitOption){
+      navigator.geolocation.getCurrentPosition(function(position){
           mapInitOption.center = {
             center : zoom.homesize,
-            position:{lat : position.coords.latitude,lng : position.coords.longitude}
+            position : {lat : position.coords.latitude,lng : position.coords.longitude}
           };
                     
       });
