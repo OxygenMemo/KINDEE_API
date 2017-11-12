@@ -41,8 +41,10 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+      getCurrentLocation();
+      setInterval(function(){autoLoadCurrentLocation()},3000);
       
-      changeMarkerCurrentPosition(positionInit,map);
+      changeMarkerCurrentPosition(currentPosition,map);
 
     } // end function initMap
     
@@ -87,8 +89,7 @@
           });
         }
     }
-    getCurrentLocation();
-    setInterval(function(){autoLoadCurrentLocation()},3000);
+    
     
     
     //alert(currentPosition.lat);
