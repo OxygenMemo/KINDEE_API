@@ -36,10 +36,12 @@
         center : positionInit, 
         zoom : zoomCountrySize
     };
+    map = new google.maps.Map(document.getElementById('map'),mapInitOption);
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+      
+      
     } // end function initMap
     
     function getCurrentLocation(){ //get Location now user
@@ -63,6 +65,11 @@
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(showlocation);
       console.log(currentPosition.lat+" "+currentPosition.lng);
+      markCurrent = new google.maps.Marker({
+        position : currentPosition,
+        title : "me",
+        map : map
+      });
       
     }// end function autoload Current
     function showlocation(position){
@@ -73,13 +80,8 @@
     }
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},3000);
-    var myLatlng = new google.maps.LatLng(13.290297599999999,100.9445334);
-
-    markCurrent = new google.maps.Marker({
-        position : myLatlng,
-        title : "me",
-        map : map
-      });
+    
+    
     //alert(currentPosition.lat);
 
     
