@@ -62,7 +62,7 @@
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-
+      var mapInitOption;
       navigator.geolocation.getCurrentPosition(function(position){
           mapInitOption = {
             center : zoom.homesize,
