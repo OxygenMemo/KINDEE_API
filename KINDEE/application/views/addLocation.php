@@ -83,7 +83,7 @@
 
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(showlocation);
-      //console.log(currentPosition.lat+" "+currentPosition.lng);
+      console.log(currentPosition.lat+" "+currentPosition.lng);
       
       
       
@@ -93,7 +93,7 @@
         lat : position.coords.latitude,
         lng : position.coords.longitude
       }
-      console.log(position.coords.latitude +" "+ currentPosition.lat);
+      //console.log(position.coords.latitude +" "+ currentPosition.lat);
     }
     function addmarker(location,map){
         
