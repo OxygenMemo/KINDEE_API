@@ -16,6 +16,9 @@
         margin: 0;
         padding: 0;
       }
+      .sizemap{
+        height: 100px; 
+      }
     </style>
     <script src='//maps.googleapis.com/maps/api/js'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +29,7 @@
   <body>
     <div class="container">  
       <div class="col-sm-12">
-        <div class="col-sm-10">
+        <div class="col-sm-10 sizemap">
           <div id="map"></div>
         </div>
         <form>
