@@ -24,6 +24,7 @@
     <script>
     
     var map;
+    var markCurrent ;
     var currentPosition={lat:0,lng:0}; // user location now update with 
     var zoomCountrySize=7;
     var positionInit={
@@ -43,16 +44,21 @@
     
 
     function autoLoadCurrentLocation(){ // auto load current location
-      navigator.geolocation.getCurrentPosition(showlocation);
-      //console.log(currentPosition.lat+" "+currentPosition.lng);
+      navigator.geolocation.getCurrentPosition(setCurrentLocation);//get location
+      markCurrent = new google.maps.Marker({
+        map : map,
+        position : currentPosition
+      });
+      
     }// end function autoload Current
-    function showlocation(position){
+    function setCurrentLocation(position){
       currentPosition = { 
         lat : position.coords.latitude,
         lng : position.coords.longitude
         };
     }
-    setInterval(function(){autoLoadCurrentLocation()},3000);
+    
+    setInterval(function(){autoLoadCurrentLocation()},3000);// 
     setInterval(function(){console.log(currentPosition.lat+" "+currentPosition.lng)},3000);
     //alert(currentPosition.lat);
 
