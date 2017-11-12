@@ -41,7 +41,8 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
-      setInterval(function(){changeMarkerCurrentPosition(currentPosition,map),3000});
+      
+      changeMarkerCurrentPosition(positionInit,map);
 
     } // end function initMap
     
