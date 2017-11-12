@@ -70,7 +70,7 @@
         lng : position.coords.longitude
       }
     }
-    getCurrentLocation();
+   // getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},1000);
     
     
