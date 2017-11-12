@@ -67,7 +67,7 @@
       console.log(position.coords.latitude);
     }
     getCurrentLocation();
-    setInterval(function(){autoLoadCurrentLocation()},000);
+    setInterval(function(){autoLoadCurrentLocation()},1000);
     
     
     //alert(currentPosition.lat);
