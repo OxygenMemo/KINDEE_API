@@ -105,7 +105,7 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       autoLoadCurrentLocation();
-      //console.log(currentPosition.lat);
+      console.log(currentPosition.lat);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       google.maps.event.addListener(map, 'click', function(event) {
