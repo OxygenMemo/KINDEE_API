@@ -43,7 +43,10 @@
     
     function getCurrentLocation(){ //get Location now user
       if(navigator){ // check permission
-        navigator.geolocation.getCurrentPosition(setCurrentPosition(position),function(){
+        navigator.geolocation.getCurrentPosition(function(position){
+          console.log(position.coords.latitude)
+          
+        },function(){
             alert("Error: The Geolocation service failed");
           }
         );
@@ -53,17 +56,13 @@
     }// end function getCurrentLocation
 
     function setCurrentPosition(position){
-      console.log(position.lat);
-      currentPosition = {
-            lat : position.coords.latitude,
-            lng : position.coords.longitude
-          }
+
     }
     function autoLoadCurrentLocation(){ // auto load current location
       setInterval(getCurrentLocation(),3000);
       console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
-    getCurrentLocation();
+    //getCurrentLocation();
    // autoLoadCurrentLocation();
     //alert(currentPosition.lat);
 
