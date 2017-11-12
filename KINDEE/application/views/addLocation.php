@@ -65,10 +65,10 @@
 
       navigator.geolocation.getCurrentPosition(function(position){
           mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
-          mapInitOption.zoom = zoom.homesize;
-          map = new google.maps.Map(document.getElementById('map'),mapInitOption);
-          
+          mapInitOption.zoom = zoom.homesize;          
       });
+      map = new google.maps.Map(document.getElementById('map'),mapInitOption);
+
       //console.log(currentPosition.lat);
       google.maps.event.addListener(map, 'click', function(event) {
           addmarker(event.latLng,map);
