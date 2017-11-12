@@ -65,9 +65,8 @@
       console.log('Google Maps API version: ' + google.maps.version);
       //getCurrentLocation();
       //autoLoadCurrentLocation();
-      navigator.geolocation.getCurrentPosition(showlocation);
-      console.log(currentPosition.lat);
-      
+     
+            
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       
@@ -106,6 +105,7 @@
         lat : position.coords.latitude,
         lng : position.coords.longitude
       }
+      console.log(position.coords.latitude +" "+ currentPosition.lat);
     }
     function addmarker(location,map){
         
