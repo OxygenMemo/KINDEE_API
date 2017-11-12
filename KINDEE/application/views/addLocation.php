@@ -73,9 +73,10 @@
     }
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},3000);
-    
+    var myLatlng = new google.maps.LatLng(13.290297599999999,100.9445334);
+
     markCurrent = new google.maps.Marker({
-        position : markCurrent,
+        position : myLatlng,
         title : "me",
         map : map
       });
