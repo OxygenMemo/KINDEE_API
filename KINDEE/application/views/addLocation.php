@@ -82,18 +82,17 @@
     
 
     function autoLoadCurrentLocation(){ // auto load current location
-      var x=navigator.geolocation.getCurrentPosition(showlocation);
+      navigator.geolocation.getCurrentPosition(showlocation);
       //console.log("gg:"+currentPosition.lat+" "+currentPosition.lng);
-      console.log(x + " " + x.lat);
+      
       
       
     }// end function autoload Current
     function showlocation(position){
       currentPosition = {
-        lat : position.coords.latitude,
-        lng : position.coords.longitude
+        lat : position.coords.lat,
+        lng : position.coords.lng
       }
-      return {lat : position.coords.latitude,lng : currentPosition.lng};
     }
     function addmarker(location,map){
         
@@ -106,7 +105,7 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       autoLoadCurrentLocation();
-      //console.log(currentPosition.lat);
+      console.log(currentPosition.lat);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
 
