@@ -24,7 +24,8 @@
     <script>
     
     var map;
-    var markCurrent;
+    var markCurrent = null;
+    
     var currentPosition={lat:0,lng:0}; // user location now update with 
     var zoomCountrySize=7;
     var positionInit={
@@ -40,11 +41,7 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
-      var marker = new google.maps.Marker({
-        position: positionInit,
-        map: map,
-        title: 'Hello World!'
-    });
+      setInterval(function(){changeMarkerCurrentPosition(currentPosition,map),3000});
 
     } // end function initMap
     
@@ -79,7 +76,16 @@
         lng : position.coords.longitude
       }
     }
-    //function 
+    function changeMarkerCurrentPosition(location,map){
+        if(markCurrent != null){
+          markCurrent.setMap(null);
+        }else{
+          markCurrent = new google.maps.Marker({
+            position : location,
+            map : map
+          });
+        }
+    }
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},3000);
     
