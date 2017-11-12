@@ -65,8 +65,8 @@
       console.log('Google Maps API version: ' + google.maps.version);
       //getCurrentLocation();
       //autoLoadCurrentLocation();
-      console.log(currentPosition.lat);
       navigator.geolocation.getCurrentPosition(showlocation);
+      console.log(currentPosition.lat);
       
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
