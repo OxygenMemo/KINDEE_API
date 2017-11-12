@@ -64,7 +64,7 @@
       console.log('Google Maps API version: ' + google.maps.version);
 
       navigator.geolocation.getCurrentPosition(function(position){
-          mapInitOption.center = {
+          mapInitOption = {
             center : zoom.homesize,
             position : {lat : position.coords.latitude,lng : position.coords.longitude}
           };
