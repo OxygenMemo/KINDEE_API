@@ -64,7 +64,10 @@
       //console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
     function showlocation(position){
-      console.log(position.coords.latitude);
+      currentPosition = {
+        lat : position.coords.latitude,
+        lng : position.coords.longitude
+      }
     }
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},1000);
