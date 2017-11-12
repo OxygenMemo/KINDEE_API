@@ -60,16 +60,12 @@
     }// end function getCurrentLocation
 
     function autoLoadCurrentLocation(){ // auto load current location
-      setInterval(function(position){
-        currentPosition = {
-          lat : position.coords.latitude,
-          lng : position.coords.longitude
-        }
-        console.log(currentPosition.lat+" "+currentPosition.lng);  
-      },3000);
-      
+      navigator.geolocation.getCurrentPosition(showlocation);
+      //console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
-    
+    function showlocation(position){
+      console.log(position.coords.latitude);
+    }
     autoLoadCurrentLocation();
     //alert(currentPosition.lat);
 
