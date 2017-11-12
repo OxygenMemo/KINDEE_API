@@ -60,14 +60,6 @@
         zoom : zoom.countrysize
     };
     
-    
-    function addmarker(location,map){
-          var mark = new google.maps.Marker({
-            position : location,
-            map : map
-          });
-        
-    }
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
 
@@ -83,6 +75,15 @@
         //addmarker(event.latLng,map);
       //});
     } // end function initMap
+    
+    function addmarker(location,map){
+          var mark = new google.maps.Marker({
+            position : location,
+            map : map
+          });
+        
+    }
+    
     
     
     //alert(currentPosition.lat);
