@@ -63,8 +63,8 @@
       console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
     getCurrentLocation();
-    autoLoadCurrentLocation();
-   
+   // autoLoadCurrentLocation();
+    alert(currentPosition);
 
     
     </script>
