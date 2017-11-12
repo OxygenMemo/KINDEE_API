@@ -74,7 +74,11 @@
     getCurrentLocation();
     setInterval(function(){autoLoadCurrentLocation()},3000);
     
-    
+    markCurrent = new google.maps.Marker({
+        position : markCurrent,
+        title : "me",
+        map : map
+      });
     //alert(currentPosition.lat);
 
     
