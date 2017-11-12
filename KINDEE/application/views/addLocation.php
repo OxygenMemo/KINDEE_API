@@ -83,7 +83,7 @@
 
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(showlocation);
-      console.log(currentPosition.lat+" "+currentPosition.lng);
+      //console.log(currentPosition.lat+" "+currentPosition.lng);
       
       
       
@@ -106,7 +106,7 @@
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       autoLoadCurrentLocation();
-      //console.log(currentPosition.lat);
+      console.log(currentPosition.lat);
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       
