@@ -43,17 +43,16 @@
     
 
     function autoLoadCurrentLocation(){ // auto load current location
-      navigator.geolocation.getCurrentPosition(setCurrentLocation);//get location
-      
+      navigator.geolocation.getCurrentPosition(showlocation);
+      //console.log(currentPosition.lat+" "+currentPosition.lng);
     }// end function autoload Current
-    function setCurrentLocation(position){
+    function showlocation(position){
       currentPosition = { 
         lat : position.coords.latitude,
         lng : position.coords.longitude
         };
     }
-    
-    setInterval(function(){autoLoadCurrentLocation()},3000);// 
+    setInterval(function(){autoLoadCurrentLocation()},3000);
     setInterval(function(){console.log(currentPosition.lat+" "+currentPosition.lng)},3000);
     //alert(currentPosition.lat);
 
