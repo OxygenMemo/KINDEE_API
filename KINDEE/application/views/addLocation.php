@@ -61,39 +61,6 @@
     };
     
     
-    
-    
-    function getCurrentLocation(){ //get Location now user
-      if(navigator){ // check permission
-
-        navigator.geolocation.getCurrentPosition(function(position){
-          currentPosition = {
-            lat : position.coords.latitude,
-            lng : position.coords.longitude
-          }
-        },function(){
-            alert("Error: The Geolocation service failed");
-          }
-        );
-      }else{//end if
-          alert("Error: Your browser doesn\'t support geolocation.");
-      }
-    }// end function getCurrentLocation
-    
-
-    function autoLoadCurrentLocation(){ // auto load current location
-      navigator.geolocation.getCurrentPosition(showlocation);
-      //console.log("gg:"+currentPosition.lat+" "+currentPosition.lng);
-      
-    }// end function autoload Current
-    function showlocation(position){
-      currentPosition = {
-        lat : position.coords.latitude,
-        lng : position.coords.longitude
-      }
-      console.log(position.coords.latitude +" "+ currentPosition.lat);
-      
-    }
     function addmarker(location,map){
           var mark = new google.maps.Marker({
             position : location,
@@ -107,6 +74,7 @@
 
       navigator.geolocation.getCurrentPosition(function(position){
           mapInitOption.center = {lat : position.coords.latitude,lng : position.coords.longitude};
+          mapInitOption.zoom = zoom.homesize;
           map = new google.maps.Map(document.getElementById('map'),mapInitOption);
       });
       //console.log(currentPosition.lat);
