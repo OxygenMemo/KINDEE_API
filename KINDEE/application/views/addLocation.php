@@ -45,21 +45,28 @@
     var markCurrent = null;
     
     var currentPosition={lat:0,lng:0}; // user location now update with 
-    var zoomCountrySize=7;
+    var zoom = {
+      countrysize : 7,
+      homesize : 15
+    }
+    
     var positionInit={
-      lat : 13.312277,
-      lng : 100.532970
+      lat : 13,
+      lng : 100
     };
     //13.312277, 100.532970 center of thailand 
     var mapInitOption={
         center : positionInit, 
-        zoom : zoomCountrySize
+        zoom : zoom.countrysize
     };
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
       getCurrentLocation();
-      mapInitOption.center = currentPosition;
+      mapInitOption={
+        center : currentPosition, 
+        zoom : zoom.homesize
+      };
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       
