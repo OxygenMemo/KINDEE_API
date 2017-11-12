@@ -44,7 +44,7 @@
     var map;
     var markCurrent = null;
     
-    var currentPosition={lat:0,lng:0}; // user location now update with 
+    let currentPosition={lat:0,lng:0}; // user location now update with 
     var zoom = {
       countrysize : 7,
       homesize : 15
@@ -82,10 +82,8 @@
     
 
     function autoLoadCurrentLocation(){ // auto load current location
-      console.log(navigator.geolocation.getCurrentPosition(showlocation));
+      navigator.geolocation.getCurrentPosition(showlocation);
       //console.log("gg:"+currentPosition.lat+" "+currentPosition.lng);
-      
-      
       
     }// end function autoload Current
     function showlocation(position){
@@ -94,7 +92,7 @@
         lng : position.coords.longitude
       }
       console.log(position.coords.latitude +" "+ currentPosition.lat);
-      return position.coords.latitude;
+      
     }
     function addmarker(location,map){
         
