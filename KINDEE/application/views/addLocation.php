@@ -46,9 +46,10 @@
     function autoLoadCurrentLocation(){ // auto load current location
       navigator.geolocation.getCurrentPosition(setCurrentLocation);//get location
       markCurrent = new google.maps.Marker({
-        map : map,
+        title : "me",
         position : currentPosition
       });
+      markCurrent.setMap(map);
       
     }// end function autoload Current
     function setCurrentLocation(position){
