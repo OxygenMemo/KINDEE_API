@@ -44,7 +44,7 @@
     var map;
     var markCurrent = null;
     
-    var currentPosition={lat:0,lng:0}; // user location now update with 
+    //var currentPosition={lat:0,lng:0}; // user location now update with 
     var zoom = {
       countrysize : 7,
       homesize : 15
@@ -89,7 +89,7 @@
       
     }// end function autoload Current
     function showlocation(position){
-      currentPosition = {
+      var currentPosition = {
         lat : position.coords.latitude,
         lng : position.coords.longitude
       }
