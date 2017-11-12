@@ -79,9 +79,9 @@
       //console.log(currentPosition.lat);
       
 
-      google.maps.event.addListener(map, 'click', function(event) {
-        addmarker(event.latLng,map);
-      });
+      //google.maps.event.addListener(map, 'click', function(event) {
+        //addmarker(event.latLng,map);
+      //});
     } // end function initMap
     
     
