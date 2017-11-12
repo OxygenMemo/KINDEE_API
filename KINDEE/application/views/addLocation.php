@@ -64,7 +64,7 @@
     }// end function autoload Current
     getCurrentLocation();
    // autoLoadCurrentLocation();
-    alert(currentPosition);
+    alert(currentPosition.lat);
 
     
     </script>
