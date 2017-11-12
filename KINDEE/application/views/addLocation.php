@@ -44,8 +44,9 @@
       getCurrentLocation();
       setInterval(function(){autoLoadCurrentLocation()},3000);
       
-      changeMarkerCurrentPosition(currentPosition,map);
-
+      google.maps.event.addListener(map, 'click', function(event) {
+        addmarker(event.latLng,map);
+      });
     } // end function initMap
     
     function getCurrentLocation(){ //get Location now user
@@ -79,9 +80,9 @@
         lng : position.coords.longitude
       }
     }
-    function changeMarkerCurrentPosition(location,map){
+    function addmarker(location,map){
         
-          markCurrent = new google.maps.Marker({
+          var mark = new google.maps.Marker({
             position : location,
             map : map
           });
