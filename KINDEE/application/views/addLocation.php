@@ -17,7 +17,7 @@
         padding: 0;
       }
       .sizemap{
-        height: 100px; 
+        height: 600px; 
       }
     </style>
     <script src='//maps.googleapis.com/maps/api/js'></script>
