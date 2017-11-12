@@ -63,13 +63,11 @@
     
     function initMap(){ // initiation map
       console.log('Google Maps API version: ' + google.maps.version);
-      getCurrentLocation();
-      autoLoadCurrentLocation();
+      //getCurrentLocation();
+      //autoLoadCurrentLocation();
       console.log(currentPosition.lat);
-      mapInitOption={
-        center : currentPosition, 
-        zoom : zoom.homesize
-      };
+      navigator.geolocation.getCurrentPosition(showlocation);
+      
       map = new google.maps.Map(document.getElementById('map'),mapInitOption);
 
       
