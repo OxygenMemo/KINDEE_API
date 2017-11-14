@@ -30,7 +30,7 @@
     </div>
     <div id="map"></div>
     
-    <?php echo from_open("/Controller_Location/addLocation"); ?>
+    <?php echo form_open("/Controller_Location/addLocation"); ?>
       <label for="lat" /> Longitude </label>
       <input id="lat" name="lat" type="text" value="<?php echo set_value('lat'); ?>"/>
       <?php echo form_error('lat'); ?>
