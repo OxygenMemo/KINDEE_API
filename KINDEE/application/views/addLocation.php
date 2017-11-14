@@ -42,7 +42,13 @@
       <br>
       Detail <br>
       <textarea id="Res_detail" name="Res_detail" cols="30" rows="5"></textarea>
-      
+      <select>
+        <?php
+          foreach($Types as $row){
+            echo "<option>$row->id</option>";
+          }
+        ?>
+      </select>
       <input type="submit" />
     </form>
     <script>
