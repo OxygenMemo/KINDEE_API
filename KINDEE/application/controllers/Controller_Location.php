@@ -28,7 +28,7 @@ class Controller_Restaurants extends CI_Controller {
         //    array_push($json,$row);
         //}
         //$data['Types']=$json;
-		$this->load->view('addRestaurants');
+		$this->load->view('welcome_message');
     }
     public function addRestaurants(){
 		//----getType-----
