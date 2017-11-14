@@ -45,7 +45,7 @@
       <select>
         <?php
           foreach($Types as $row){
-            echo "<option>$row->Type_name</option>";
+            echo "<option value='$row->Type_id'>$row->Type_name</option>";
           }
         ?>
       </select>
