@@ -20,15 +20,15 @@ class Controller_Location extends CI_Controller {
 	 */
 	public function index()
 	{   
-        $this->load->model("Location");
-        $result=$this->Location->getAllLocation();
+        $this->load->model("Types");
+        $result=$this->Location->getAllTypes();
 
         $json = array();
         foreach($result->result() as $row){
             array_push($json,$row);
             //echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
         }
-        $data['json']=$json;
+        $data['Types']=$json;
 		$this->load->view('addLocation',$data);
     }
     public function getAllLocation(){

@@ -41,12 +41,8 @@
       <input id="Res_name" name="Res_name" type="text" >
       <br>
       Detail <br>
-      <textarea id="Res_detail" name="Res_detail" cols="30" rows="5">
-
-      </textarea>
+      <textarea id="Res_detail" name="Res_detail" cols="30" rows="5"></textarea>
       
-
-
       <input type="submit" />
     </form>
     <script>
