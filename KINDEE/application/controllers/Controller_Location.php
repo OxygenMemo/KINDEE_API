@@ -21,7 +21,7 @@ class Controller_Location extends CI_Controller {
 	public function index()
 	{   
         $this->load->model("Types");
-        $result=$this->Location->getAllTypes();
+        $result=$this->Types->getAllTypes();
 
         $json = array();
         foreach($result->result() as $row){
