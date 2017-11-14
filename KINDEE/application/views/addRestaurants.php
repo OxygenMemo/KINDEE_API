@@ -96,7 +96,7 @@
           new google.maps.Marker({
             map : map,
             position : location,
-            icon : "./img_pin/mepin.png"
+            icon : "mepin.png"
           })
         );
       }
