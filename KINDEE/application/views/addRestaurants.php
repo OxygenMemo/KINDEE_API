@@ -96,7 +96,7 @@
           new google.maps.Marker({
             map : map,
             position : location,
-            icon : "mepin.png"
+            icon : "http://angsila.cs.buu.ac.th/~58160698/IMG/map-marker-with-a-person-shape.png"
           })
         );
       }
