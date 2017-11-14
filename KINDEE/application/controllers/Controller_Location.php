@@ -28,7 +28,7 @@ class Controller_Location extends CI_Controller {
             array_push($json,$row);
         }
         $data['Types']=$json;
-		$this->load->view('addRestaurants');
+		$this->load->view('addRestaurants',$data);
     }
     public function addRestaurants(){
 		//----getType-----
