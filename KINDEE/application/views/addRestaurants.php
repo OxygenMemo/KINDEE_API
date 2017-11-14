@@ -94,8 +94,8 @@
               lng: position.coords.longitude
             };
             
-            document.getElementById("lat").value = pos.lat;
-            document.getElementById("lng").value = pos.lng;
+            document.getElementById("Res_lat").value = pos.lat;
+            document.getElementById("Res_lng").value = pos.lng;
 
             marker(map,pos);
             map.setZoom(18);
