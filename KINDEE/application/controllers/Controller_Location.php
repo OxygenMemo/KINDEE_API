@@ -57,6 +57,7 @@ class Controller_Restaurants extends CI_Controller {
 			$this->Restaurants->Res_lng = $this->input->post('Res_lng');
 			$this->Restaurants->Res_name = $this->input->post('Res_name');
 			$this->Restaurants->Res_detail = $this->input->post('Res_detail');
+			$this->Restaurants->Type_id = $this->input->post('Type_id');
 			
 			echo $this->Restaurants->addRestaurants();
 			$result = $this->Restaurants->getIdRestaurants();
