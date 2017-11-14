@@ -55,9 +55,13 @@
         ?>
       </select>
       <input type="submit" />
+      <?php foreach($Restaurants as $row){
+          echo "$row->Res_name <br>";        
+      } ?>
     </form>
     <script>
       var markers = [];
+      var markersRes = [];
       var map;
       function initMap() {//13.28642,100.9252583
         var uluru = {lat: 13.28642, lng: 100.9252583};

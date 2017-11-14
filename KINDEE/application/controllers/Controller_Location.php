@@ -20,26 +20,41 @@ class Controller_Location extends CI_Controller {
 	 */
 	public function index()
 	{   
+		$Restaurants = array();
+		$this->load->model("Restaurants");
+		$result=$this->Restaurants->getAllRestaurants();
+		foreach($result->result() as $row){
+			array_push($Restaurants,$row);
+		}
+		//------
         $this->load->model("Types");
         $result=$this->Types->getAllTypes();
 
-        $json = array();
+        $Types = array();
         foreach($result->result() as $row){
-            array_push($json,$row);
+            array_push($Types,$row);
         }
-        $data['Types']=$json;
+		$data['Types']=$Types;
+		$data['Restaurants']=$Restaurants;
 		$this->load->view('addRestaurants',$data);
     }
     public function addRestaurants(){
+		$Restaurants = array();
+		$this->load->model("Restaurants");
+		$result=$this->Restaurants->getAllRestaurants();
+		foreach($result->result() as $row){
+			array_push($Restaurants,$row);
+		}
 		//----getType-----
 		$this->load->model("Types");
         $result=$this->Types->getAllTypes();
 
-        $json = array();
+        $Types = array();
         foreach($result->result() as $row){
-            array_push($json,$row);
-        }
-		$data['Types']=$json;
+            array_push($Types,$row);
+		}
+		$data['Restaurants']=$Restaurants;
+		$data['Types']=$Types;
 
 		//------Validation
 		$this->load->library('form_validation');

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Restaurants extends CI_Model{
-    public function addRestaurants(){
+    public function addLocation(){
         $sql = "INSERT INTO `Restaurants`( `Res_name`, `Res_detail`, `Type_id`, `Res_lat`, `Res_lng`) VALUES (?,?,?,?,?)";
         $bind_data = array(
             $this->Res_name,
@@ -12,6 +12,11 @@ class Restaurants extends CI_Model{
         );
         $this->db->query($sql,$bind_data);
         return $this->db->affected_rows() > 0 ? "T" : "F";
+    }
+    public function getAllRestaurants(){
+        $sql = "SELECT * FROM `Restaurants`";
+        return $this->db->query($sql);
+
     }
 }
 ?>
