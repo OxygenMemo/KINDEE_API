@@ -30,14 +30,14 @@
     </div>
     <div id="map"></div>
     
-    <?php echo form_open("/Controller_Location/addLocation"); ?>
-      <label for="lat" /> Longitude </label>
-      <input id="lat" name="lat" type="text" value="<?php echo set_value('lat'); ?>"/>
-      <?php echo form_error('lat'); ?>
+    <?php echo form_open("/Controller_Location/addRestaurants"); ?>
+      <label for="Res_lat" /> Longitude </label>
+      <input id="Res_lat" name="Res_lat" type="text" value="<?php echo set_value('Res_lat'); ?>"/>
+      <?php echo form_error('Res_lat'); ?>
       <br>
-      <label for="lng" /> Longitude </label>
-      <input id="lng" name="lng" type="text" value="<?php echo set_value('lng'); ?>" /> 
-      <?php echo form_error('lng'); ?>
+      <label for="Res_lng" /> Longitude </label>
+      <input id="Res_lng" name="Res_lng" type="text" value="<?php echo set_value('Res_lng'); ?>" /> 
+      <?php echo form_error('Res_lng'); ?>
       <br>
       <label for="Res_name" /> Name </label>
       <input id="Res_name" name="Res_name" type="text" <?php echo set_value('Ras_name'); ?> />
@@ -47,7 +47,7 @@
       <textarea id="Res_detail" name="Res_detail" cols="30" rows="5" value="<?php echo set_value('Res_detail'); ?>"></textarea>
       <?php echo form_error('Res_detail'); ?>
       <br>
-      <select name="Type_name">
+      <select name="Type_id">
         <?php
           foreach($Types as $row){
             echo "<option value='$row->Type_id'>$row->Type_name</option>";

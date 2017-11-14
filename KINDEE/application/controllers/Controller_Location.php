@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller_Location extends CI_Controller {
+class Controller_Restaurants extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -28,9 +28,9 @@ class Controller_Location extends CI_Controller {
             array_push($json,$row);
         }
         $data['Types']=$json;
-		$this->load->view('addLocation',$data);
+		$this->load->view('addRestaurants',$data);
     }
-    public function addLocation(){
+    public function addRestaurants(){
 		//----getType-----
 		$this->load->model("Types");
         $result=$this->Types->getAllTypes();
@@ -44,26 +44,29 @@ class Controller_Location extends CI_Controller {
 		//------Validation
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters("<div class='error'>","</div>");
-		$this->form_validation->set_rules('lat','lat','required');
-		$this->form_validation->set_rules('lng','lng','required');
+		$this->form_validation->set_rules('Res_lat','Res_lat','required');
+		$this->form_validation->set_rules('Res_lng','Res_lng','required');
 		$this->form_validation->set_rules('Res_name','Res_name','required');
 		$this->form_validation->set_rules('Res_detail','Res_detail','required');
 		
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('addLocation',$data);
+			$this->load->view('addRestaurants',$data);
 		}else{
-			$this->load->model("Locations");
-			$this->Locations->Location_lat = $this->input->post('lat');
-			$this->Locations->Location_lng = $this->input->post('lng');
-			echo $this->Locations->addLocation();
-			$result = $this->Locations->getIdLocation();
+			$this->load->model("Restaurants");
+			$this->Restaurants->Res_lat = $this->input->post('Res_lat');
+			$this->Restaurants->Res_lng = $this->input->post('Res_lng');
+			$this->Restaurants->Res_name = $this->input->post('Res_name');
+			$this->Restaurants->Res_detail = $this->input->post('Res_detail');
+			
+			echo $this->Restaurants->addRestaurants();
+			$result = $this->Restaurants->getIdRestaurants();
 			if(!empty($result->result())){
 				echo "yes";
 			}else{
 				echo "no";
 			}
 
-			$this->load->view('addLocation',$data);
+			$this->load->view('addRestaurants',$data);
 		}
 	}
 
