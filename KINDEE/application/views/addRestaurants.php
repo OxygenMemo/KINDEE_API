@@ -72,7 +72,7 @@
         echo "markersRes.push(";
         echo "new google.maps.Marker({";
         echo "map : map,";
-        echo "icon : './img_pin/mepin.png',";
+        //echo "icon : './img_pin/mepin.png',";
         echo "title : '$row->Res_name',";
         echo "position : {lat: $row->Res_lat , lng: $row->Res_lng}";
         echo "})";
@@ -95,7 +95,8 @@
         markers.push(
           new google.maps.Marker({
             map : map,
-            position : location
+            position : location,
+            icon : "./img_pin/mepin.png"
           })
         );
       }
