@@ -55,9 +55,7 @@
         ?>
       </select>
       <input type="submit" />
-      <?php foreach($Restaurants as $row){
-          echo "$row->Res_name <br>";        
-      } ?>
+      
     </form>
     <script>
       var markers = [];
@@ -69,7 +67,16 @@
           zoom: 8,
           center: uluru
         });
-        
+        <?php
+        foreach($Restaurants as $row){
+        echo "markersRes.push(";
+        echo "new google.maps.Marker({";
+        echo "map : map,";
+        echo "position : {lat: $row->Res_lat , lng: $row->Res_lng}";
+        echo "})";
+        echo ");";
+        }
+        ?>
         map.addListener("click",function(event){
           showLatLng(event.latLng);
           marker(map,event.latLng);
