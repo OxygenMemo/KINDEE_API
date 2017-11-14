@@ -111,8 +111,8 @@
       }
 
       function showLatLng(location){
-        document.getElementById("lat").value = location.lat();
-        document.getElementById("lng").value = location.lng();
+        document.getElementById("Res_lat").value = location.lat();
+        document.getElementById("Res_lng").value = location.lng();
       }
 
     </script>
