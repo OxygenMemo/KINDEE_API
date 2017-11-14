@@ -47,7 +47,7 @@
       <textarea id="Res_detail" name="Res_detail" cols="30" rows="5" value="<?php echo set_value('Res_detail'); ?>"></textarea>
       <?php echo form_error('Res_detail'); ?>
       <br>
-      <select name="Type">
+      <select name="Type_name">
         <?php
           foreach($Types as $row){
             echo "<option value='$row->Type_id'>$row->Type_name</option>";

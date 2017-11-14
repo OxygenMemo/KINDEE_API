@@ -51,6 +51,12 @@ class Controller_Location extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('addLocation',$data);
+		}else{
+			$this->load->model("Locations");
+			$this->Locations->Location_lat = $this->input->post('lat');
+			$this->Locations->Location_lng = $this->input->post('lng');
+			echo $this->Locations->addLocation();
 		}
-    }
+	}
+
 }
