@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller_Restaurants extends CI_Controller {
+class Controller_Location extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -60,12 +60,7 @@ class Controller_Restaurants extends CI_Controller {
 			$this->Restaurants->Type_id = $this->input->post('Type_id');
 			
 			echo $this->Restaurants->addRestaurants();
-			$result = $this->Restaurants->getIdRestaurants();
-			if(!empty($result->result())){
-				echo "yes";
-			}else{
-				echo "no";
-			}
+			
 
 			$this->load->view('addRestaurants',$data);
 		}
