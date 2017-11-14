@@ -29,19 +29,23 @@
       <input type="button" onclick="myLocation()" value="myLocation">
     </div>
     <div id="map"></div>
-    <?php echo site_url(); ?>
-    <?php echo from_open(); ?>
+    
+    <?php echo from_open("/Controller_Location/addLocation"); ?>
       <label for="lat" /> Longitude </label>
-      <input id="lat" name="lat" type="text" />
+      <input id="lat" name="lat" type="text" value="<?php echo set_value('lat'); ?>"/>
+      <?php echo form_error('lat'); ?>
       <br>
       <label for="lng" /> Longitude </label>
-      <input id="lng" name="lng" type="text" /> 
+      <input id="lng" name="lng" type="text" value="<?php echo set_value('lng'); ?>" /> 
+      <?php echo form_error('lng'); ?>
       <br>
       <label for="Res_name" /> Name </label>
-      <input id="Res_name" name="Res_name" type="text" >
+      <input id="Res_name" name="Res_name" type="text" <?php echo set_value('Ras_name'); ?> />
+      <?php echo form_error('Res_name'); ?>
       <br>
       Detail <br>
-      <textarea id="Res_detail" name="Res_detail" cols="30" rows="5"></textarea>
+      <textarea id="Res_detail" name="Res_detail" cols="30" rows="5" value="<?php echo set_value('Res_detail'); ?>"></textarea>
+      <?php echo form_error('Res_detail'); ?>
       <br>
       <select>
         <?php

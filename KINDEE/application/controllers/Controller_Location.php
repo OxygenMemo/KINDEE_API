@@ -32,6 +32,8 @@ class Controller_Location extends CI_Controller {
 		$this->load->view('addLocation',$data);
     }
     public function addLocation(){
-
+		$this->load->library('form_validation');
+		$this->form_validation->set_error_delimiters("<div class='error'>","</div>");
+		$this->form_validation->set_rules('lat','lat','required');
     }
 }
