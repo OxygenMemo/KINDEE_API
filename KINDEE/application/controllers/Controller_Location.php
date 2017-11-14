@@ -31,7 +31,7 @@ class Controller_Location extends CI_Controller {
         $data['Types']=$json;
 		$this->load->view('addLocation',$data);
     }
-    public function getAllLocation(){
+    public function addLocation(){
 
     }
 }

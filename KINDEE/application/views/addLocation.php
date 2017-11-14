@@ -29,8 +29,8 @@
       <input type="button" onclick="myLocation()" value="myLocation">
     </div>
     <div id="map"></div>
-    
-    <form>
+    <?php echo site_url(); ?>
+    <?php echo from_open(); ?>
       <label for="lat" /> Longitude </label>
       <input id="lat" name="lat" type="text" />
       <br>
@@ -42,6 +42,7 @@
       <br>
       Detail <br>
       <textarea id="Res_detail" name="Res_detail" cols="30" rows="5"></textarea>
+      <br>
       <select>
         <?php
           foreach($Types as $row){
