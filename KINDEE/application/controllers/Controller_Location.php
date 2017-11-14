@@ -26,12 +26,22 @@ class Controller_Location extends CI_Controller {
         $json = array();
         foreach($result->result() as $row){
             array_push($json,$row);
-            //echo "$row->id $row->name $row->address $row->lat $row->lng $row->type <br>";
         }
         $data['Types']=$json;
 		$this->load->view('addLocation',$data);
     }
     public function addLocation(){
+		//----getType-----
+		$this->load->model("Types");
+        $result=$this->Types->getAllTypes();
+
+        $json = array();
+        foreach($result->result() as $row){
+            array_push($json,$row);
+        }
+		$data['Types']=$json;
+
+		//------Validation
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters("<div class='error'>","</div>");
 		$this->form_validation->set_rules('lat','lat','required');
@@ -40,7 +50,7 @@ class Controller_Location extends CI_Controller {
 		$this->form_validation->set_rules('Res_detail','Res_detail','required');
 		
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('addLocation');
+			$this->load->view('addLocation',$data);
 		}
     }
 }
