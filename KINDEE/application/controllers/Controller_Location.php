@@ -20,15 +20,15 @@ class Controller_Location extends CI_Controller {
 	 */
 	public function index()
 	{   
-        //$this->load->model("Types");
-        //$result=$this->Types->getAllTypes();
+        $this->load->model("Types");
+        $result=$this->Types->getAllTypes();
 
-        //$json = array();
-        //foreach($result->result() as $row){
-        //    array_push($json,$row);
-        //}
-        //$data['Types']=$json;
-		$this->load->view('welcome_message');
+        $json = array();
+        foreach($result->result() as $row){
+            array_push($json,$row);
+        }
+        $data['Types']=$json;
+		$this->load->view('addRestaurants');
     }
     public function addRestaurants(){
 		//----getType-----
