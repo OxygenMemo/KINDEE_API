@@ -73,6 +73,7 @@
         echo "new google.maps.Marker({";
         echo "map : map,";
         echo "icon : './img_pin/mepin.png',";
+        echo "title : '$row->Res_name',";
         echo "position : {lat: $row->Res_lat , lng: $row->Res_lng}";
         echo "})";
         echo ");";
