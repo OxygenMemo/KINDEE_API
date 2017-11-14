@@ -56,6 +56,14 @@ class Controller_Location extends CI_Controller {
 			$this->Locations->Location_lat = $this->input->post('lat');
 			$this->Locations->Location_lng = $this->input->post('lng');
 			echo $this->Locations->addLocation();
+			$result = $this->Locations->getIdLocation();
+			if(!empty($result->result())){
+				echo "yes";
+			}else{
+				echo "no";
+			}
+
+			$this->load->view('addLocation',$data);
 		}
 	}
 
