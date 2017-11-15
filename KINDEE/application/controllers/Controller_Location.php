@@ -40,8 +40,15 @@ class Controller_Location extends CI_Controller {
     }
     public function addRestaurants(){
 		
-		
+		//----getType-----
+		$this->load->model("Types");
+		$result=$this->Types->getAllTypes();
 
+		$Types = array();
+		foreach($result->result() as $row){
+			array_push($Types,$row);
+		}
+		$data['Types']=$Types;
 		//------Validation
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters("<div class='error'>","</div>");
@@ -61,14 +68,7 @@ class Controller_Location extends CI_Controller {
 			$this->Restaurants->Type_id = $this->input->post('Type_id');
 			
 			$this->Restaurants->addRestaurants();
-			//----getType-----
-			$this->load->model("Types");
-        	$result=$this->Types->getAllTypes();
-
-    	    $Types = array();
-	        foreach($result->result() as $row){
-            	array_push($Types,$row);
-			}
+			
 		
 			$Restaurants = array();
 			$this->load->model("Restaurants");
@@ -77,7 +77,7 @@ class Controller_Location extends CI_Controller {
 				array_push($Restaurants,$row);
 			}
 			$data['Restaurants']=$Restaurants;
-			$data['Types']=$Types;
+			
 			$this->load->view('addRestaurants',$data);
 		}
 	}
