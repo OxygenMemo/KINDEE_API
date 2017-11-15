@@ -69,7 +69,6 @@
           center: uluru
         });
         <?php
-        //$count=0;
         foreach($Restaurants as $row){
         echo "markersRes.push(";
         echo "new google.maps.Marker({";
@@ -78,20 +77,11 @@
         echo "title : '$row->Res_name',";
         echo "position : {lat: $row->Res_lat , lng: $row->Res_lng}";
         echo "})";
-        echo ");\n";
+        echo ");";
         ?>
-        /*
-        infoWindows.push(
-          new google.maps.InfoWindow({
-          content: "<?php //echo $row->Res_name; ?>"
-        });
-        );
-        markersRes[<?php //echo $i; ?>].addListener('click', function() {
-          infowindow.open(map, markersRes[<?php //echo $i; ?>]);
-        });
-        */
+      
+
         <?php
-        $i++;
         }// close foreach
         ?>
         map.addListener("click",function(event){
