@@ -50,7 +50,7 @@
       <?php echo form_error('Res_lng'); ?>
     
       <br>
-      
+      <h3>Restaurant</h3>
       <label for="Res_name" /> Name </label>
       <input id="Res_name" name="Res_name" type="text" <?php echo set_value('Ras_name'); ?> />
       <?php echo form_error('Res_name'); ?>
