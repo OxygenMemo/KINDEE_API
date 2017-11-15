@@ -60,7 +60,7 @@ class Controller_Location extends CI_Controller {
 			$this->Restaurants->Res_detail = $this->input->post('Res_detail');
 			$this->Restaurants->Type_id = $this->input->post('Type_id');
 			
-			echo $this->Restaurants->addRestaurants();
+			$this->Restaurants->addRestaurants();
 			//----getType-----
 			$this->load->model("Types");
         	$result=$this->Types->getAllTypes();
