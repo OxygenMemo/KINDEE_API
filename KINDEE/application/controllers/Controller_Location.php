@@ -49,6 +49,13 @@ class Controller_Location extends CI_Controller {
 			array_push($Types,$row);
 		}
 		$data['Types']=$Types;
+		$Restaurants = array();
+		$this->load->model("Restaurants");
+		$result=$this->Restaurants->getAllRestaurants();
+		foreach($result->result() as $row){
+			array_push($Restaurants,$row);
+		}
+		$data['Restaurants']=$Restaurants;
 		//------Validation
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters("<div class='error'>","</div>");
