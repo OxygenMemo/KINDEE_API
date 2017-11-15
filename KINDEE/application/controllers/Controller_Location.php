@@ -39,22 +39,8 @@ class Controller_Location extends CI_Controller {
 		$this->load->view('addRestaurants',$data);
     }
     public function addRestaurants(){
-		$Restaurants = array();
-		$this->load->model("Restaurants");
-		$result=$this->Restaurants->getAllRestaurants();
-		foreach($result->result() as $row){
-			array_push($Restaurants,$row);
-		}
-		//----getType-----
-		$this->load->model("Types");
-        $result=$this->Types->getAllTypes();
-
-        $Types = array();
-        foreach($result->result() as $row){
-            array_push($Types,$row);
-		}
-		$data['Restaurants']=$Restaurants;
-		$data['Types']=$Types;
+		
+		
 
 		//------Validation
 		$this->load->library('form_validation');
@@ -75,8 +61,23 @@ class Controller_Location extends CI_Controller {
 			$this->Restaurants->Type_id = $this->input->post('Type_id');
 			
 			echo $this->Restaurants->addRestaurants();
-			
+			//----getType-----
+			$this->load->model("Types");
+        	$result=$this->Types->getAllTypes();
 
+    	    $Types = array();
+	        foreach($result->result() as $row){
+            	array_push($Types,$row);
+			}
+		
+			$Restaurants = array();
+			$this->load->model("Restaurants");
+			$result=$this->Restaurants->getAllRestaurants();
+			foreach($result->result() as $row){
+				array_push($Restaurants,$row);
+			}
+			$data['Restaurants']=$Restaurants;
+			$data['Types']=$Types;
 			$this->load->view('addRestaurants',$data);
 		}
 	}
