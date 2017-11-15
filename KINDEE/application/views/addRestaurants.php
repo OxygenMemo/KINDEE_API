@@ -79,7 +79,12 @@
         echo "})";
         echo ");";
         ?>
-      
+        infoWindows.push(
+          new google.maps.InfoWindow({
+          content: "gg"
+        });
+
+        );
 
         <?php
         }// close foreach
