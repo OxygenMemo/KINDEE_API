@@ -85,7 +85,7 @@
               }) 
         );
         markersRes[<?php echo $count; ?>].addListener('click', function() {
-          infowindows[<?php echo $count; ?>].open(map, markersRes[<?php echo $count; ?>]);
+          infoWindows[<?php echo $count; ?>].open(map, markersRes[<?php echo $count; ?>]);
         });
 
         <?php
