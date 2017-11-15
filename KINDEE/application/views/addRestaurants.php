@@ -69,7 +69,7 @@
           center: uluru
         });
         <?php
-        $count=0;
+        //$count=0;
         foreach($Restaurants as $row){
         echo "markersRes.push(";
         echo "new google.maps.Marker({";
