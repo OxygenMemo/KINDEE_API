@@ -8,13 +8,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
        #map {
-        height: 400px;
+        height: 300px;
         width: 100%;
        }
        #floating-panel {
         position: absolute;
         top: 10px;
-        left: 25%;
+        left: 10px;
         z-index: 5;
         background-color: #fff;
         padding: 5px;
