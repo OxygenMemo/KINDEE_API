@@ -81,7 +81,7 @@
         echo ");";
         ?>
         infoWindows.push(new google.maps.InfoWindow({
-              content: "<?php echo $row->name; ?>"
+              content: "<?php echo $row->Res_name; ?>"
               }) 
         );
         markersRes[<?php echo $count; ?>].addListener('click', function() {
