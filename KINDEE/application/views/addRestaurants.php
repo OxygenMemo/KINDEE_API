@@ -37,8 +37,10 @@
      <input type="button" onclick="myLocation()" value="myLocation">
     </div>
     <div id="map"></div>
-    
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
     <?php echo form_open("/Controller_Location/addRestaurants"); ?>
+    
       <label for="Res_lat" /> Longitude </label>
       <input id="Res_lat" name="Res_lat" type="text" value="<?php echo set_value('Res_lat'); ?>"/>
       <?php echo form_error('Res_lat'); ?>
@@ -46,6 +48,7 @@
       <label for="Res_lng" /> Longitude </label>
       <input id="Res_lng" name="Res_lng" type="text" value="<?php echo set_value('Res_lng'); ?>" /> 
       <?php echo form_error('Res_lng'); ?>
+    
       <br>
       
       <label for="Res_name" /> Name </label>
@@ -66,6 +69,7 @@
         <input type="submit" />
       
         </form>
+        </div>
         </div>
     </div>
     <script>
