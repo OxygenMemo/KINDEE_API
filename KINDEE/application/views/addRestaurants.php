@@ -80,6 +80,7 @@
         echo "})";
         echo ");\n";
         ?>
+        /*
         infoWindows.push(
           new google.maps.InfoWindow({
           content: "<?php echo $row->Res_name; ?>"
@@ -88,7 +89,7 @@
         markersRes[<?php echo $i; ?>].addListener('click', function() {
           infowindow.open(map, markersRes[<?php echo $i; ?>]);
         });
-
+        */
         <?php
         $i++;
         }// close foreach
