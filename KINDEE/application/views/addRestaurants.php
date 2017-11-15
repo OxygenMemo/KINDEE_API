@@ -78,13 +78,13 @@
         echo "title : '$row->Res_name',";
         echo "position : {lat: $row->Res_lat , lng: $row->Res_lng}";
         echo "})";
-        echo ");";
+        echo ");\n";
         ?>
         infoWindows.push(
           new google.maps.InfoWindow({
           content: "<?php echo $row->Res_name; ?>"
         });
-        )
+        );
         markersRes[<?php echo $i; ?>].addListener('click', function() {
           infowindow.open(map, markersRes[<?php echo $i; ?>]);
         });
