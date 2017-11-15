@@ -69,6 +69,7 @@
           center: uluru
         });
         <?php
+        $count=0;
         foreach($Restaurants as $row){
         echo "markersRes.push(";
         echo "new google.maps.Marker({";
@@ -80,11 +81,15 @@
         echo ");";
         ?>
         infoWindows.push(new google.maps.InfoWindow({
-              content: "gg"
+              content: "<?php echo $row->name; ?>"
               }) 
         );
+        markersRes[<?php echo $count; ?>].addListener('click', function() {
+          infowindow.open(map, markersRes[<?php echo $count; ?>]);
+        });
 
         <?php
+        $count++;
         }// close foreach
         ?>
         map.addListener("click",function(event){
