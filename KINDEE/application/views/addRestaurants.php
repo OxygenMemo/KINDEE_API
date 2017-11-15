@@ -31,7 +31,7 @@
   <body>
   <div class="container">
     <div class="col-sm-12">
-    <h3>My Google Maps Demo</h3>
+    <h3>add Restaurant v 1.1</h3>
     <div id="floating-panel">
       
      <input type="button" onclick="myLocation()" value="myLocation">
