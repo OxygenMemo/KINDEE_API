@@ -68,11 +68,11 @@ class Controller_Location extends CI_Controller {
 			$this->load->view('addRestaurants',$data);
 		}else{
 			$this->load->model("Restaurants");
-			$this->Restaurants->Res_lat = $this->input->post('Res_lat');
-			$this->Restaurants->Res_lng = $this->input->post('Res_lng');
-			$this->Restaurants->Res_name = $this->input->post('Res_name');
-			$this->Restaurants->Res_detail = $this->input->post('Res_detail');
-			$this->Restaurants->Type_id = $this->input->post('Type_id');
+			$this->Restaurants->Res_lat = htmlentities($this->input->post('Res_lat'));
+			$this->Restaurants->Res_lng = htmlentities($this->input->post('Res_lng'));
+			$this->Restaurants->Res_name = htmlentities($this->input->post('Res_name'));
+			$this->Restaurants->Res_detail = htmlentities($this->input->post('Res_detail'));
+			$this->Restaurants->Type_id = htmlentities($this->input->post('Type_id'));
 			
 			$this->Restaurants->addRestaurants();
 			
