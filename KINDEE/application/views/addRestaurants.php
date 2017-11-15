@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
        #map {
         height: 400px;
@@ -25,9 +29,12 @@
     </style>
   </head>
   <body>
+  <div class="container">
+    <div class="col-sm-12">
     <h3>My Google Maps Demo</h3>
     <div id="floating-panel">
-      <input type="button" onclick="myLocation()" value="myLocation">
+      
+     <input type="button" onclick="myLocation()" value="myLocation">
     </div>
     <div id="map"></div>
     
@@ -40,6 +47,7 @@
       <input id="Res_lng" name="Res_lng" type="text" value="<?php echo set_value('Res_lng'); ?>" /> 
       <?php echo form_error('Res_lng'); ?>
       <br>
+      
       <label for="Res_name" /> Name </label>
       <input id="Res_name" name="Res_name" type="text" <?php echo set_value('Ras_name'); ?> />
       <?php echo form_error('Res_name'); ?>
@@ -54,10 +62,12 @@
             echo "<option value='$row->Type_id'>$row->Type_name</option>";
           }
         ?>
-      </select>
-      <input type="submit" />
+        </select>
+        <input type="submit" />
       
-    </form>
+        </form>
+        </div>
+    </div>
     <script>
       var markers = [];
       var markersRes = [];
