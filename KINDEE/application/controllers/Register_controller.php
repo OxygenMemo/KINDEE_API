@@ -16,7 +16,7 @@ class Register_controller extends CI_Controller {
             $User_DB->password = $password;
             $User_DB->fullname = $fullname;
 
-            $result->result=$User_DB->Register();
+            $result->result = $User_DB->Register();
             echo json_encode($result);
 
         }else{
