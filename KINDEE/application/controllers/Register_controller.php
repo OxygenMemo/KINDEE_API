@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Register_controller extends CI_Controller {
 
     public function Register(){
+        $result = new obj();
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $fullname = $this->input->post('fname');
@@ -14,20 +15,16 @@ class Register_controller extends CI_Controller {
             $User_DB->username = $username;
             $User_DB->password = $password;
             $User_DB->fullname = $fullname;
-            $result=$User_DB->Register();
+
+            $result->result=$User_DB->Register();
             return $result;
 
         }else{
-            return "miss info";
+            $result->result = "miss info";
+            return $result;
         }
 
     }
-    public function testJson(){
-        $result = new obj();
-        $result->result=1;
-        echo json_encode($result);
-    }
-    
     
 }
 class obj{}
