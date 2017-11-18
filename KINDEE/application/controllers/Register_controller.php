@@ -17,13 +17,13 @@ class Register_controller extends CI_Controller {
             $User_DB->password = $password;
             $User_DB->fullname = $fullname;
 
-            $data->$data = $User_DB->Register();
-            $result->result = $data;
+            
+            $result->result = $User_DB->Register();
             echo json_encode($result);
 
         }else{
-            $data->data = false;
-            $result->result = $data;
+           
+            $result->result = false;
             echo json_encode($result);
         }
 
