@@ -4,7 +4,7 @@ class User_DB extends CI_Model{
     
     public function Register(){
         if(!$this->checkUnique($this->username))
-            return "F";
+            return false;
         $sql = "INSERT INTO `Users`(`User_username`, `User_password`, `User_fullname`) VALUES (?,?,?)";
         $data_bild = array(
             $this->username,
@@ -13,10 +13,10 @@ class User_DB extends CI_Model{
         
         
         if($this->db->query($sql,$data_bild)){
-            return "T";   
+            return true;   
         }
         else{
-            return "F";
+            return false;
         }
     }
     private function checkUnique($name){
