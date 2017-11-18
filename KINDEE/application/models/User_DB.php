@@ -6,7 +6,7 @@ class User_DB extends CI_Model{
         $sql = "INSERT INTO `Users`(`User_username`, `User_password`, `User_fullname`) VALUES (?,?,?)";
         $data_bild = array(
             $this->username,
-            $this->password,
+            md5($this->password),
             $this->fullname);
 
         if($this->db->query($sql,$data_bild)){
