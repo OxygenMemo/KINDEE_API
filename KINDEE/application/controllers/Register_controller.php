@@ -20,7 +20,7 @@ class Register_controller extends CI_Controller {
             echo json_encode($result);
 
         }else{
-            $result->result = "miss info";
+            $result->result = "missing info data !";
             echo json_encode($result);
         }
 
