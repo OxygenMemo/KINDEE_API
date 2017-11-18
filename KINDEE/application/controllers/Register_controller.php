@@ -17,7 +17,7 @@ class Register_controller extends CI_Controller {
             $User_DB->fullname = $fullname;
 
             $result->result=$User_DB->Register();
-            return json_encode($result);
+            echo json_encode($result);
 
         }else{
             $result->result = "miss info";
