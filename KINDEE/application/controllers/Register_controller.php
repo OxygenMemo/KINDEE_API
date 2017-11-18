@@ -23,6 +23,7 @@ class Register_controller extends CI_Controller {
 
     }
     public function testJson(){
+        $result = null;
         $result->result=1;
         echo json_encode($result);
     }
