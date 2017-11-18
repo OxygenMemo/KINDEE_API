@@ -5,6 +5,7 @@ class Register_controller extends CI_Controller {
 
     public function Register(){
         $result = new obj();
+        $data = new obj();
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $fullname = $this->input->post('fname');
@@ -20,7 +21,8 @@ class Register_controller extends CI_Controller {
             echo json_encode($result);
 
         }else{
-            $result->result = "missing info data !";
+            $data->result = "missing info data !";
+            $result->result = $data;
             echo json_encode($result);
         }
 
