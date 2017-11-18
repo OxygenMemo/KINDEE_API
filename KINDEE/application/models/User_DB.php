@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User_DB extends CI_Model{
     
     public function Register(){
-        if(!checkUnique($this->username))
+        if(!$this->checkUnique($this->username))
             return "F";
         $sql = "INSERT INTO `Users`(`User_username`, `User_password`, `User_fullname`) VALUES (?,?,?)";
         $data_bild = array(
