@@ -20,7 +20,7 @@ class User_DB extends CI_Model{
         }
     }
     private function checkUnique($name){
-        $sqlcheckunique = "SELECT `User_username` FROM `Users` WHERE `User_name` LIKE ?";
+        $sqlcheckunique = "SELECT `User_username` FROM `Users` WHERE `User_username` LIKE ?";
         $data_bild = array($name); 
         $result = $this->db->query($sqlcheckunique,$data_bild);
         return $result->num_rows() == 0 ? true : false;
