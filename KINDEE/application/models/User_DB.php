@@ -7,12 +7,12 @@ class User_DB extends CI_Model{
             $this->username,
             sha1($this->password)
         );
-        $result = $this->db->query($sql,$data_bild);
+        $resultDB = $this->db->query($sql,$data_bild);
 
         $result = new obj();
         $user = new obj();
         $status = new obj();
-        if($result->num_rows() > 0){
+        if($resultDB->num_rows() > 0){
             $status->status = true;
             foreach($result->result() as $row){
                 $user->id = $row->User_id;
