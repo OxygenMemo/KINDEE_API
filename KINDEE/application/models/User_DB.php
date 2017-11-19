@@ -47,7 +47,7 @@ class User_DB extends CI_Model{
         $data_bild = array($name); 
         $result = $this->db->query($sqlcheckunique,$data_bild);
         return $result->num_rows() == 0 ? true : false;
+        
     }
-
+    
 }
-class obj{}
