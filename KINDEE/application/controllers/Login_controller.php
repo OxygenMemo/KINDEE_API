@@ -26,8 +26,10 @@ class Login_controller extends CI_Controller{
         
         }else{
             $status = false;
+            $user->User_id = "null";
+            $user->User_fullname = "null";
         }
-        $data->status = $status;
+        //$data->status = $status;
         $data->user = $user;
         echo json_encode($data);
          
