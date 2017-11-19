@@ -1,7 +1,30 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User_DB extends CI_Model{
-    
+    public function Login(){
+        $sql = "SELECT `User_id`,`User_fullname` FROM `Users` WHERE `User_username` LIKE ? AND `User_password` LIKE ?";
+        $data_bild = array(
+            $this->username,
+            sha1($this->password)
+        );
+        $result = $this->db->query($sql,$data_bild);
+
+        $result = new obj();
+        $user = new obj();
+        $status = new obj();
+        if($result->num_rows() > 0){
+            $status->status = true;
+            foreach($result->result() as $row){
+                $user->id = $row->User_id;
+                $user->fullname = $row->User_fullname;
+            }   
+        }else{
+            $status = false;
+        }
+        $result->status = $status;
+        $result->user = $user;
+        return $result; 
+    }
     public function Register(){
         if(!$this->checkUnique($this->username))
             return false;
@@ -27,3 +50,4 @@ class User_DB extends CI_Model{
     }
 
 }
+class obj{}
