@@ -12,7 +12,26 @@ class Login_controller extends CI_Controller{
         $User_DB->username = $username;
         $User_DB->password = $password;
 
-        echo json_encode($User_DB->Login());
+        
+        $result = $User_DB->Login();
+        $data = new obj();
+        $status = new obj();
+        $user = new obj();
+        if($result->num_rows() > 0){
+            $status->status = true;
+            foreach($result->result() as $row){
+                $user->User_id = $row->User_id;
+                $user->User_fullname = $row->User_fullname;
+            }
+            $data->user = $user;
+        }else{
+            $status = false;
+        }
+        $data->status = $status;
+        echo json_encode($data);
+         
 
     }
 }
+class obj{}
+    

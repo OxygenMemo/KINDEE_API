@@ -8,21 +8,7 @@ class User_DB extends CI_Model{
             sha1($this->password)
         );
         $resultDB = $this->db->query($sql,$data_bild);
-
-        $result = new obj();
-        $user = new obj();
-        $status = new obj();
-        if($resultDB->num_rows() > 0){
-            $status->status = true;
-            foreach($result->result() as $row){
-                $user->id = $row->User_id;
-                $user->fullname = $row->User_fullname;
-            }   
-        }else{
-            $status = false;
-        }
-        $result->status = $status;
-        $result->user = $user;
+        
         return $result; 
     }
     public function Register(){
