@@ -23,11 +23,12 @@ class Login_controller extends CI_Controller{
                 $user->User_id = $row->User_id;
                 $user->User_fullname = $row->User_fullname;
             }
-            $data->user = $user;
+        
         }else{
             $status = false;
         }
         $data->status = $status;
+        $data->user = $user;
         echo json_encode($data);
          
 
