@@ -17,7 +17,7 @@ class Login_controller extends CI_Controller{
         $data = new obj();
         $status = new obj();
         $user = new obj();
-        if($result->result->num_rows() > 0){
+        if($result->num_rows() > 0){
             $status->status = true;
             foreach($result->result() as $row){
                 $user->User_id = $row->User_id;

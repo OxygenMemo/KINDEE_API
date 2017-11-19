@@ -9,7 +9,7 @@ class User_DB extends CI_Model{
         );
         $resultDB = $this->db->query($sql,$data_bild);
         
-        return $result; 
+        return $resultDB; 
     }
     public function Register(){
         if(!$this->checkUnique($this->username))
