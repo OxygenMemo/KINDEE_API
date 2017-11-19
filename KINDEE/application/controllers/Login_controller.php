@@ -15,21 +15,20 @@ class Login_controller extends CI_Controller{
         
         $result = $User_DB->Login();
         $data = new obj();
-        $status = new obj();
         $user = new obj();
         if($result->num_rows() > 0){
-            $status->status = true;
+            $data->status = true;
             foreach($result->result() as $row){
                 $user->User_id = $row->User_id;
                 $user->User_fullname = $row->User_fullname;
             }
         
         }else{
-            $status = false;
+            $data->status = false;
             $user->User_id = "null";
             $user->User_fullname = "null";
         }
-        $data->status = $status;
+        
         $data->user = $user;
         echo json_encode($data);
          
