@@ -14,7 +14,7 @@ class Resturant_controller extends CI_Controller{
         $ImageData = $this->input->post('image_path');
         $ImageName = $this->input->post('image_name');
 
-        $GetOldIdSQL ="SELECT id FROM imguploadtest ORDER BY id ASC";
+        //$GetOldIdSQL ="SELECT id FROM imguploadtest ORDER BY id ASC";
 
         $Query = $Resturants->getIDImg();
 
