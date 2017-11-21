@@ -35,7 +35,7 @@ class Resturant_controller extends CI_Controller{
                 file_put_contents("~/public_html/uploadimg/".$ImagePath,base64_decode($ImageData));
                 //echo $this->input->post("Res_type")."<br>";
                 //echo $this->input->post("latitude")."<br>";
-                echo $this->input->post("longitude")."<br>";
+                //echo $this->input->post("longitude")."<br>";
                // echo $this->input->post("Res_type")."<br>";
                 //echo $this->input->post("Res_comment")."<br>";
 
