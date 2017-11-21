@@ -40,7 +40,7 @@ class Resturants extends CI_Model{
     public function searchResturant(){
         $sql = "SELECT * FROM `Resturant` WHERE Res_name LIKE ?";
         $data_bind = array(
-            $this->Res_name
+            "%".$this->Res_name."%"
         );
         return $this->db->query($sql,$data_bind);
     }
