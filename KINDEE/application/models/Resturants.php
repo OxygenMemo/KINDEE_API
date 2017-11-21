@@ -32,7 +32,7 @@ class Resturants extends CI_Model{
             $this->Res_img_path,
             $this->Res_latitude,
             $this->Res_longitude,
-            $this->Type_id
+            $this->Res_Type_id
         );
         return $this->db->query($sql,$data_bild);
 
