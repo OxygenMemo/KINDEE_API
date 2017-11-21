@@ -63,4 +63,17 @@ class Resturant_controller extends CI_Controller{
         $data['Types']=$Types;
         echo json_encode($Types);
     }
+    public function searchResturant(){
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $this->load->model('Resturants');
+            $Resturants=$this->Resturant;
+            $Resturants->Res_name = $this->input->post('Res_name');
+            $result=$Resturants->searchResturant();
+            $arr = array();
+            foreach($result->result() as $row){
+                array_push($arr,$row);
+            }
+            echo json_encode($arr);
+        }
+    }
 }
