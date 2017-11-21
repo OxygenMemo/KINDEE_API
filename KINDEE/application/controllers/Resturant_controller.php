@@ -66,7 +66,7 @@ class Resturant_controller extends CI_Controller{
     public function searchResturant(){
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $this->load->model('Resturants');
-            $Resturants=$this->Resturant;
+            $Resturants=$this->Resturants;
             $Resturants->Res_name = $this->input->post('Res_name');
             $result=$Resturants->searchResturant();
             $arr = array();
