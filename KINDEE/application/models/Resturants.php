@@ -19,7 +19,7 @@ class Resturants extends CI_Model{
 
     }
     public function getIDResturant(){
-        $sql = "SELECT Res_id FROM Restaurants ORDER BY Res_id ASC";
+        $sql = "SELECT Res_id FROM Resturant ORDER BY Res_id ASC";
         return $this->db->query($sql);
     }
     public function insertResturant(){
