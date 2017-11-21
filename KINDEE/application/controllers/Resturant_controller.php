@@ -32,7 +32,7 @@ class Resturant_controller extends CI_Controller{
             $Resturants->ImageName = $ImageName;
             if($Resturants->insertIMG()){
 
-                file_put_contents("~/public_html/uploadimg/".$ImagePath,base64_decode($ImageData));
+                file_put_contents("../../../../uploadimg/".$ImagePath,base64_decode($ImageData));
 
                 echo "Your Image Has Been Uploaded.";
             }
