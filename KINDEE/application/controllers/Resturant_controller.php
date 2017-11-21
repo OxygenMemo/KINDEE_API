@@ -61,6 +61,6 @@ class Resturant_controller extends CI_Controller{
             array_push($Types,$row);
         }
         $data['Types']=$Types;
-        echo json_encode($data);
+        echo json_encode($Types);
     }
 }
