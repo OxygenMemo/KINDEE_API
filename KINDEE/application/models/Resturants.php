@@ -38,7 +38,7 @@ class Resturants extends CI_Model{
 
     }
     public function searchResturant(){
-        $sql = "SELECT * FROM `Resturant` WHERE Res_name LIKE ?";
+        $sql = "SELECT * FROM `Resturant`  natural join Types where Res_name like ?";
         $data_bind = array(
             "%".$this->Res_name."%"
         );
