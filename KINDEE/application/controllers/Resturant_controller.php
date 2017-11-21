@@ -10,13 +10,18 @@ class Resturant_controller extends CI_Controller{
         $DefaultId = 0;
         
         $this->load->model('Resturants');
-        $Resturants = $this->Resturants;
+        $Resturants = $this->Resturants
+        ;
         $ImageData = $this->input->post('image_path');
         $ImageName = $this->input->post('image_name');
-
+        $Res_name = $this->input->post('Res_name');
+        $Res_detail = $this->input->post('Res_detail');
+        $Res_latitude = (double)$this->input->post('Res_latitude');
+        $Res_longitude = (double)$this->input->post('Res_longitude');
+        $type = 1;
         //$GetOldIdSQL ="SELECT id FROM imguploadtest ORDER BY id ASC";
 
-        $Query = $Resturants->getIDImg();
+        $Query = $Resturants->getIDResturant();
 
         foreach($Query->result() as $row){
 
@@ -28,12 +33,17 @@ class Resturant_controller extends CI_Controller{
         $ServerURL = "https://angsila.cs.buu.ac.th/~58160698/uploadimg/$ImagePath";
 
         //$InsertSQL = "insert into imguploadtest (image_path,image_name) values ('$ServerURL','$ImageName')";
-            $Resturants->ServerURL = $ServerURL;
-            $Resturants->ImageName = $ImageName;
-            if($Resturants->insertIMG()){
+            $Resturants->Res_img_path = $ServerURL;
+            $Resturants->Res_img_name = $ImageName;
+            $Resturants->Res_name = $Res_name;
+            $Resturants->Res_detail = $Res_detail;
+            $Resturants->Res_latitude = $Res_latitude;
+            $Resturants->Res_longitude = $Res_longitude;
+            $Resturants->Res_Type_id = $type;
+            if($Resturants->insertResturant()){
 
                 file_put_contents("/home/BUU/58160698/public_html/uploadimg/".$ImagePath,base64_decode($ImageData));
-                echo $this->input->post('latitude');
+                //echo $this->input->post('latitude');
                 echo "Your Image Has Been Uploaded.";
             }
 

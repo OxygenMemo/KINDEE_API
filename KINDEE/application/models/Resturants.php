@@ -18,15 +18,21 @@ class Resturants extends CI_Model{
         return $this->db->query($sql);
 
     }
-    public function getIDImg(){
+    public function getIDResturant(){
         $sql = "SELECT id FROM imguploadtest ORDER BY id ASC";
         return $this->db->query($sql);
     }
-    public function insertIMG(){
-        $sql = "insert into imguploadtest (image_path,image_name) values (?,?)";
+    public function insertResturant(){
+        $sql = "INSERT INTO `Resturant`(`Res_name`, `Res_detail`, `Res_img_name`, `Res_img_path`, `Res_latitude`, `Res_longitude`, `Type_id`) VALUES 
+        (?,?,?,?,?,?,?)";
         $data_bild = array(
-            $this->ServerURL,
-            $this->ImageName
+            $this->Res_name,
+            $this->Res_detail,
+            $this->Res_img_name,
+            $this->Res_img_path,
+            $this->Res_latitude,
+            $this->Res_longitude,
+            $this->Type_id
         );
         return $this->db->query($sql,$data_bild);
 
