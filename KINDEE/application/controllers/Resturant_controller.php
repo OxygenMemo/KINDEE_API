@@ -18,7 +18,7 @@ class Resturant_controller extends CI_Controller{
         $Res_detail = $this->input->post('Res_detail');
         $Res_latitude = (double)$this->input->post('Res_latitude');
         $Res_longitude = (double)$this->input->post('Res_longitude');
-        $type = 1;
+        $type = (int) $this->input->post('Res_Type_id');
         //$GetOldIdSQL ="SELECT id FROM imguploadtest ORDER BY id ASC";
 
         $Query = $Resturants->getIDResturant();
