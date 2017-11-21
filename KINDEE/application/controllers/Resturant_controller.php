@@ -36,8 +36,8 @@ class Resturant_controller extends CI_Controller{
                 echo $this->input->post("Res_type")."<br>";
                 echo $this->input->post("latitude")."<br>";
                 echo $this->input->post("longitude")."<br>";
-                echo $this->input->post("Res_type")."<br>":
-                echo $this->input->post("Res_comment")."<br>":
+                echo $this->input->post("Res_type")."<br>";
+                echo $this->input->post("Res_comment")."<br>";
 
                 echo "Your Image Has Been Uploaded.";
             }
