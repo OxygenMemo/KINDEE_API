@@ -25,7 +25,7 @@ class Resturant_controller extends CI_Controller{
 
         foreach($Query->result() as $row){
 
-            $DefaultId = $row->id;
+            $DefaultId = $row->Res_id;
         }
 
         $ImagePath = "imageAndroid/$DefaultId.png";
