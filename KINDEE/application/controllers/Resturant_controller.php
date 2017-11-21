@@ -33,7 +33,7 @@ class Resturant_controller extends CI_Controller{
             if($Resturants->insertIMG()){
 
                 file_put_contents("/home/BUU/58160698/public_html/uploadimg/".$ImagePath,base64_decode($ImageData));
-
+                echo $this->input->post('latitude');
                 echo "Your Image Has Been Uploaded.";
             }
 
