@@ -28,7 +28,7 @@ class Resturants extends CI_Model{
             $this->ServerURL,
             $this->ImageName
         );
-        return $this->db->query($sql);
+        return $this->db->query($sql,$data_bild);
 
     }
 }
