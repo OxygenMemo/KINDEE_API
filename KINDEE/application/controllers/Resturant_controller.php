@@ -51,9 +51,16 @@ class Resturant_controller extends CI_Controller{
                                                              
             echo "Not Uploaded";
         }
+    }
+    public function getTypes(){
+        $this->load->model("Types");
+        $result=$this->Types->getAllTypes();
 
-    
-
- 
+        $Types = array();
+        foreach($result->result() as $row){
+            array_push($Types,$row);
+        }
+        $data['Types']=$Types;
+        echo json_encode($data);
     }
 }
