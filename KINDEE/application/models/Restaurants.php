@@ -18,5 +18,18 @@ class Restaurants extends CI_Model{
         return $this->db->query($sql);
 
     }
+    public function getIDImg(){
+        $sql = "SELECT id FROM imguploadtest ORDER BY id ASC";
+        return $this->db->query($sql);
+    }
+    public function insertIMG(){
+        $sql = "insert into imguploadtest (image_path,image_name) values (?,?)";
+        $data_bild = array(
+            $this->ServerURL,
+            $this->ImageName
+        );
+        echo $this->db->query($sql);
+
+    }
 }
 ?>
