@@ -21,12 +21,13 @@ class Resturant_controller extends CI_Controller{
         $type = (int) $this->input->post('Res_Type_id');
         //$GetOldIdSQL ="SELECT id FROM imguploadtest ORDER BY id ASC";
 
-        $Query = $Resturants->getIDResturant();
+        $Query = $Resturants->getLastResturant();
 
         foreach($Query->result() as $row){
 
             $DefaultId = $row->Res_id;
         }
+        $DefaultId++;
 
         $ImagePath = "imageAndroid/$DefaultId.png";
 

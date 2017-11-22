@@ -22,6 +22,10 @@ class Resturants extends CI_Model{
         $sql = "SELECT Res_id FROM Resturant ORDER BY Res_id ASC";
         return $this->db->query($sql);
     }
+    public function getLastResturant(){
+        $sql = "SELECT * FROM `Resturant` ORDER BY Res_id DESC LIMIT 1";
+        return $this->db->query($sql);
+    }
     public function insertResturant(){
         $sql = "INSERT INTO `Resturant`(`Res_name`, `Res_detail`, `Res_img_name`, `Res_img_path`, `Res_latitude`, `Res_longitude`, `Type_id`) VALUES 
         (?,?,?,?,?,?,?)";
