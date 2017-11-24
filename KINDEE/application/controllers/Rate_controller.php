@@ -8,7 +8,7 @@ class Rate_controller extends CI_Controller {
         $Rate_DB = $this->Rate_DB;
         $Rate_DB->Res_id = $Res_id;
 
-        $result->result = $Rate_DB->getResRate();
+        $result->result = $Rate_DB->getResRate()->result();
         echo json_encode($result);
     }
     public function getRateUser(){
