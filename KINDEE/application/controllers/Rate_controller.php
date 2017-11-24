@@ -14,8 +14,9 @@ class Rate_controller extends CI_Controller {
         foreach($result->result() as $row){
             $sum+=$row->Rate_number;
         }
+        
         $sum/=$num;
-        $obj->Rate_number = $sum;
+        $obj->Rate_number = sprintf("%0.02f",$sum);
         echo json_encode($sum);
     }
     public function getRateUser($Res_id,$User_id){
