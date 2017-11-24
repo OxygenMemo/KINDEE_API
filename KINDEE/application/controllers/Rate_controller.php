@@ -17,7 +17,7 @@ class Rate_controller extends CI_Controller {
         
         $sum/=$num;
         $obj->Rate_number = sprintf("%0.02f",$sum);
-        echo json_encode($sum);
+        echo json_encode($obj);
     }
     public function getRateUser($Res_id,$User_id){
         $this->load->model("Rate_DB");
