@@ -1,11 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+//defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rate_controller extends CI_Controller {
     
     public function getResRate($Res_id){
-        
         $this->load->model("Rate_DB");
+
         $Rate_DB = $this->Rate_DB;
         $Rate_DB->Res_id = $Res_id;
 
