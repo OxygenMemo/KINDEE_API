@@ -15,6 +15,6 @@ class Comment_DB extends CI_Model{
             $this->Res_id,
             $this->Com_text
         );
-        return $this->db->query($sql,$data_bild)
+        return $this->db->query($sql,$data_bild);
     }
 }
