@@ -11,13 +11,18 @@ class Rate_controller extends CI_Controller {
         $result = $Rate_DB->getResRate();
         $sum=0;
         $num=$result->num_rows();
-        foreach($result->result() as $row){
-            $sum+=$row->Rate_number;
-        }
+        if($num>0){
+            foreach($result->result() as $row){
+                $sum+=$row->Rate_number;
+            }
         
-        $sum/=$num;
-        $obj->Rate_number = sprintf("%0.02f",$sum);
-        echo json_encode($obj);
+            $sum/=$num;
+            $obj->Rate_number = sprintf("%0.02f",$sum);
+            echo json_encode($obj);
+        }else{
+            $obj->Rate_number=0;
+            echo json_encode($obj);
+        }
     }
     public function getRateUser($Res_id,$User_id){
         $this->load->model("Rate_DB");
