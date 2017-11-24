@@ -8,4 +8,13 @@ class Comment_DB extends CI_Model{
 
         return $this->db->query($sql,$data_bild);
     }
+    public function addComment(){
+        $sql = "INSERT INTO `Comments`(`User_id`, `Res_id`, `Com_text`) VALUES (?,?,?)";
+        $data_bild = array(
+            $this->User_id,
+            $this->Res_id,
+            $this->Com_text
+        );
+        return $this->db->query($sql,$data_bild)
+    }
 }
