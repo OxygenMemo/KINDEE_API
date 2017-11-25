@@ -31,9 +31,13 @@ class Rate_controller extends CI_Controller {
         $Rate_DB->Res_id = $Res_id;
         $Rate_DB->User_id = $User_id;
 
-        $result = $Rate_DB->getRateUser()->result();
-        foreach($result as $row){
-            echo json_encode($row);
+        $result = $Rate_DB->getRateUser();
+        if($result->num_rows() > 0){
+            foreach($result->result() as $row){
+                echo json_encode($row);
+            }
+        }else{
+            echo "{'Rate_number':'0'}";
         }
         
     }
