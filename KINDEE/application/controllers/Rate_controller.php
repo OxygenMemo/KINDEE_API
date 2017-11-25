@@ -31,8 +31,30 @@ class Rate_controller extends CI_Controller {
         $Rate_DB->Res_id = $Res_id;
         $Rate_DB->User_id = $User_id;
 
-        $result->result = $Rate_DB->getRateUser()->result();
+        $result = $Rate_DB->getRateUser()->result();
         echo json_encode($result);
+    }
+    public function RatingRes(){
+        $Rate_number = $this->input->post('Rate_number');
+        $User_id = $this->input->post('User_id');
+        $Res_id = $this->input->post('Res_id');
+
+        if($Rate_number>0 && $Rate_number<=5){
+            $this->load->model("Rate_DB");
+            $Rate_DB = $this->Rate_DB;
+            $Rate_DB->Res_id = $Res_id;
+            $Rate_DB->User_id = $User_id;
+            $Rate_DB->Rate_number = $Rate_number;
+            $result = $Rate_DB->getRateUser();
+            if($result->num_rows() > 0){
+                $Rate_DB->RatingUpdate();
+            }else{
+                $Rate_DB->RatingInsert();
+            }
+        }else{
+            echo "mistake rate_number";
+        }
+
     }
     
 }
