@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class FavoritResturants extends CI_Controller {
+class FavoritResturants_controller extends CI_Controller {
     public function Favorit(){
         $Res_id = $this->input->post('Res_id');
         $User_id = $this->input->post('User_id');
