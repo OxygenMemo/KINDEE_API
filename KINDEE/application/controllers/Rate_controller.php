@@ -32,7 +32,10 @@ class Rate_controller extends CI_Controller {
         $Rate_DB->User_id = $User_id;
 
         $result = $Rate_DB->getRateUser()->result();
-        echo json_encode($result);
+        foreach($result as $row){
+            echo json_encode($row);
+        }
+        
     }
     public function RatingRes(){
         $Rate_number = $this->input->post('Rate_number');

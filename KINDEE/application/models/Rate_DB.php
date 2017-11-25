@@ -9,7 +9,7 @@ class Rate_DB extends CI_Model{
         return $this->db->query($sql,$data_bild);
     }
     public function getRateUser(){
-        $sql = "SELECT `Rate_number` FROM `Rate` WHERE `Res_id` LIKE ? AND `User_id` LIKE ?";
+        $sql = "SELECT `Rate_number` FROM `Rate` WHERE `Res_id` LIKE ? AND `User_id` LIKE ? LIMIT 1";
         $data_bild = array(
             $this->Res_id,
             $this->User_id
