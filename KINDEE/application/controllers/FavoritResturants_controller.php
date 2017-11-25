@@ -22,6 +22,20 @@ class FavoritResturants_controller extends CI_Controller {
         }
         echo json_encode($status);
     }
+    public function checkFavorite($Res_id,$User_id){
+        $status = new obj();
+        $this->load->model('FavoritResturants');
+        $FavoritResturants = $this->FavoritResturants;
+        $FavoritResturants->Res_id = $Res_id;
+        $FavoritResturants->User_id = $User_id;
+        $result=$FavoritResturants->selectWithRes_idAndUser_id();
+        if($result->num_rows() >0 ){
+            $status->status = true;
+        }else{
+            $status->status = false;
+        }
+        echo json_encode($status);
+    }
 
 }
 class obj{}
