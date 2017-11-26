@@ -26,4 +26,15 @@ class FavoritResturants extends CI_Model{
         );
         return $this->db->query($sql,$data_bild);
     }
+    public function selectWithUser_id(){
+        $sql = "SELECT * FROM `FavoritResturants` f LEFT JOIN `Resturant` r ON f.Res_id=r.Res_id 
+        LEFT JOIN `Types` t on r.Type_id = t.Type_id
+        WHERE `User_id` LIKE ?";
+
+        $data_bild = array(
+            
+            $this->User_id
+        );
+        return $this->db->query($sql,$data_bild);   
+    }
 }

@@ -36,6 +36,18 @@ class FavoritResturants_controller extends CI_Controller {
         }
         echo json_encode($status);
     }
+    public function getFavoriteWithUser_id(){
+        $User_id = $this->input->post("User_Id");
+        $FavoritResturants = $this->FavoritResturants;
+        $FavoritResturants->User_id = $User_id;
+        $result=$FavoritResturants->selectWithUser_id();
+
+        $arr = array();
+        foreach($result->result() as $row){
+            array_push($arr,$row);
+        }
+        echo json_encode($arr);
+    }
 
 }
 class obj{}
