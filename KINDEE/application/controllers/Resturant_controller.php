@@ -105,7 +105,7 @@ class Resturant_controller extends CI_Controller{
         }
         $random=rand(0,$sum);
         foreach($arr as $row){
-            if($random>$row->startlength && $random<$row->endlength){
+            if($random>=$row->startlength && $random<=$row->endlength){
                 echo "college <br>";
                 echo $row->Res_id."<br>".$row->startlength."<br>".$row->endlength."<br>Rate :".$row->Rate_number."<hr>";
                 echo "Random : ".$random."<br>";
