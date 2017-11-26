@@ -89,7 +89,7 @@ class Resturant_controller extends CI_Controller{
             }
         }
         foreach($arr as $row){
-            echo $row->Res_id;
+            echo $row->Res_id."<br>";
         }
         
     }
