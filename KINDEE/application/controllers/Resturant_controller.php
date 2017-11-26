@@ -124,7 +124,7 @@ class Resturant_controller extends CI_Controller{
             if($random>=$row->startlength && $random<=$row->endlength){
                 $Resturants->Res_id=$row->Res_id;
                 $result=$Resturants->getRes_byId();
-                echo json_encode($result);
+                echo json_encode($result->result());
                 break;
             }
            
