@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Resturants extends CI_Model{
     public function getRes_byId(){
-        $sql = "SELECT * FROM `Resturant` WHERE Res_id LIKE ? ";
+        $sql = "SELECT * FROM `Resturant` r LEFT JOIN `Types` t ON r.Res_id = t.Res_id WHERE Res_id LIKE ? ";
         $data_bild = array(
             $this->Res_id
         );
