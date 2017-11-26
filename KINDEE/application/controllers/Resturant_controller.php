@@ -77,4 +77,36 @@ class Resturant_controller extends CI_Controller{
             echo json_encode($arr);
         }
     }
+    public function randomRes($lat,$lng){
+        //13.2886393,100.9406224/13.2961419,100.9454103/@13.2947288,100.9439393
+        $this->load->model("Resturants");
+        $Resturants = $this->Resturants;
+        $result = $Resturants->getAllRestaurants();
+        $arr=array();
+        foreach($result->result() as $row){
+            echo distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K");
+        }
+    }
+    private function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+        
+          $theta = $lon1 - $lon2;
+          $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+          $dist = acos($dist);
+          $dist = rad2deg($dist);
+          $miles = $dist * 60 * 1.1515;
+          $unit = strtoupper($unit);
+        
+          if ($unit == "K") {
+            return ($miles * 1.609344);
+          } else if ($unit == "N") {
+              return ($miles * 0.8684);
+            } else {
+                return $miles;
+              }
+              
+        }
+        
+       
+    
+        
 }
