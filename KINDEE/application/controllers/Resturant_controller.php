@@ -81,15 +81,28 @@ class Resturant_controller extends CI_Controller{
         //13.2886393,100.9406224/13.2961419,100.9454103/@13.2947288,100.9439393
         $this->load->model("Resturants");
         $Resturants = $this->Resturants;
-        $result = $Resturants->getAllRestaurants_random();
+        $result = $Resturants->getAllRestaurantsRate_random();
         $arr=array();
+        $sum=0;
+        
         foreach($result->result() as $row){
             if($this->distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K") <= $km){
-                array_push($arr,$row);
+                
+                $obj = new obj();
+                $obj->startlength = $sum;
+
+                $sum+=$row->Rate_number;
+
+                $obj->endlength = $sum;
+                $obj->Res_id = $row->Res_id;
+                array_push($arr,$obj);
+                
             }
         }
         foreach($arr as $row){
-            echo $row->Res_id."<br>";
+            
+            echo $row->Res_id."<br>".$row->startlength."<br>".$row->endlength."<br>".$row->Res_id."<hr>";
+            
         }
         
     }
@@ -116,3 +129,4 @@ class Resturant_controller extends CI_Controller{
     
         
 }
+class obj{}
