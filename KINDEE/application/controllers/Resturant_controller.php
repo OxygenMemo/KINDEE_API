@@ -95,13 +95,14 @@ class Resturant_controller extends CI_Controller{
 
                 $obj->endlength = $sum;
                 $obj->Res_id = $row->Res_id;
+                $obj->Rate_number = $row->Rate_number;
                 array_push($arr,$obj);
                 
             }
         }
         foreach($arr as $row){
             
-            echo $row->Res_id."<br>".$row->startlength."<br>".$row->endlength."<br>".$row->Res_id."<hr>";
+            echo $row->Res_id."<br>".$row->startlength."<br>".$row->endlength."<br>Rate :".$row->Rate_number."<hr>";
             
         }
         
