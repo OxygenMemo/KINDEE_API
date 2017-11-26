@@ -2,14 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Resturants extends CI_Model{
     public function getRes_byId(){
-        $sql = "SELECT * FROM `Restaurants` WHERE Res_id LIKE ? ";
+        $sql = "SELECT * FROM `Resturant` WHERE Res_id LIKE ? ";
         $data_bild = array(
             $this->Res_id
         );
         return $this->db->query($sql,$data_bild);
     }
     public function addRestaurants(){
-        $sql = "INSERT INTO `Restaurants`( `Res_name`, `Res_detail`, `Type_id`, `Res_lat`, `Res_lng`) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO `Resturant`( `Res_name`, `Res_detail`, `Type_id`, `Res_lat`, `Res_lng`) VALUES (?,?,?,?,?)";
         $bind_data = array(
             $this->Res_name,
             $this->Res_detail,
