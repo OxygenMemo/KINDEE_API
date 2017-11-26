@@ -38,6 +38,7 @@ class FavoritResturants_controller extends CI_Controller {
     }
     public function getFavoriteWithUser_id(){
         $User_id = $this->input->post("User_Id");
+        $this->load->model("FavoritResturants");
         $FavoritResturants = $this->FavoritResturants;
         $FavoritResturants->User_id = $User_id;
         $result=$FavoritResturants->selectWithUser_id();
