@@ -98,8 +98,8 @@ class Resturant_controller extends CI_Controller{
                 $rate = $Rate_DB->getResRate();
                 $rateAvg=0;
                 if($rate->num_rows() >0){
-                    foreach($rate as $r){
-                        $rateAvg += $r->Rate_number;
+                    foreach($rate->result() as $row2){
+                        $rateAvg += $row2->Rate_number;
                     }
                     $rateAvg/=$rate->num_rows();
                 }else{
@@ -113,7 +113,7 @@ class Resturant_controller extends CI_Controller{
                 $obj->startlength=$sum;
                 $sum+=$obj->Rate_number;
                 $obj->endlength=$sum;
-                 
+
                 array_push($arr,$obj);
             }
         }
