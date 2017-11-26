@@ -84,7 +84,7 @@ class Resturant_controller extends CI_Controller{
         $result = $Resturants->getAllRestaurants();
         $arr=array();
         foreach($result->result() as $row){
-            echo $this->distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K");
+            echo $this->distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K")."<br>";
         }
     }
     private function distance($lat1, $lon1, $lat2, $lon2, $unit) {
