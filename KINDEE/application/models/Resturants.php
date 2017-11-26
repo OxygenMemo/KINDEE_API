@@ -14,7 +14,7 @@ class Resturants extends CI_Model{
         return $this->db->affected_rows() > 0 ? "T" : "F";
     }
     public function getAllRestaurants(){
-        $sql = "SELECT * FROM `Restaurant`";
+        $sql = "SELECT * FROM `Resturant`";
         return $this->db->query($sql);
 
     }
