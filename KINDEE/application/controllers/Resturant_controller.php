@@ -84,25 +84,41 @@ class Resturant_controller extends CI_Controller{
         $result = $Resturants->getAllRestaurantsRate_random();
         $arr=array();
         $sum=0;
+        $this->load->model('Rate_DB');
+        $Rate_DB = $this->Rate_DB;
+        
         
         foreach($result->result() as $row){
             if($this->distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K") <= $km){
                 
                 $obj = new obj();
-                $obj->startlength = $sum;
-
-                if($row->Rate_number != null){
-                    $sum+=$row->Rate_number;
-                }else{
-                    $sum+=1;
-                }
-                $obj->endlength = $sum;
                 $obj->Res_id = $row->Res_id;
-                $obj->Rate_number = $row->Rate_number;
+                //--- calrate ----
+                $Rate_DB->Res_id = $obj->Res_id;
+                $rate = $Rate_DB->getResRate();
+                $rateAvg=0;
+                if($rate->num_rows() >0){
+                    foreach($rate as $r){
+                        $rateAvg += $r->Rate_number;
+                    }
+                    $rateAvg/=$rate->num_rows();
+                }else{
+                    $rateAvg=1;
+                }
+
+                $obj->Rate_number=$rateAvg;
+
+               
+                //----------------
+                $obj->startlength=$sum;
+                $sum+=$obj->Rate_number;
+                $obj->endlength=$sum;
+                 
                 array_push($arr,$obj);
-                
             }
         }
+       
+
         $random=rand(0,$sum);
         foreach($arr as $row){
             if($random>=$row->startlength && $random<=$row->endlength){
