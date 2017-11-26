@@ -120,6 +120,7 @@ class Resturant_controller extends CI_Controller{
        
 
         $random=rand(0*10,$sum*10)/10;
+        if(sizeof($arr)>0){
         foreach($arr as $row){
             if($random>=$row->startlength && $random<=$row->endlength){
                 $Resturants->Res_id=$row->Res_id;
@@ -133,6 +134,9 @@ class Resturant_controller extends CI_Controller{
            
             
         }
+    }else{
+        echo "[]";
+    }
         
         
         
