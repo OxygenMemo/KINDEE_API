@@ -19,7 +19,7 @@ class Resturants extends CI_Model{
 
     }
     public function getAllRestaurantsRate_random(){
-        $sql = "SELECT re.Res_id,`Res_latitude`,`Res_longitude`,ra.Rate_number FROM `Resturant`";
+        $sql = "SELECT `Res_id`,`Res_latitude`,`Res_longitude` FROM `Resturant`";
         return $this->db->query($sql);
 
     }
