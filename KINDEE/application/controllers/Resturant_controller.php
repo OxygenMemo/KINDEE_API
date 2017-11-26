@@ -81,14 +81,17 @@ class Resturant_controller extends CI_Controller{
         //13.2886393,100.9406224/13.2961419,100.9454103/@13.2947288,100.9439393
         $this->load->model("Resturants");
         $Resturants = $this->Resturants;
-        $result = $Resturants->getAllRestaurants();
+        $result = $Resturants->getAllRestaurants_random();
         $arr=array();
         foreach($result->result() as $row){
             if($this->distance($lat,$lng,$row->Res_latitude,$row->Res_longitude,"K") <= $km){
                 array_push($arr,$row);
             }
         }
-        echo json_encode($arr);
+        foreach($arr as $row){
+            echo $row->Res_id;
+        }
+        
     }
     private function distance($lat1, $lon1, $lat2, $lon2, $unit) {
         

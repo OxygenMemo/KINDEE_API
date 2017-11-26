@@ -18,6 +18,11 @@ class Resturants extends CI_Model{
         return $this->db->query($sql);
 
     }
+    public function getAllRestaurants_random(){
+        $sql = "SELECT `Res_id`,`Res_latitude`,`Res_longitude` FROM `Resturant`";
+        return $this->db->query($sql);
+
+    }
     public function getIDResturant(){
         $sql = "SELECT Res_id FROM Resturant ORDER BY Res_id ASC";
         return $this->db->query($sql);
