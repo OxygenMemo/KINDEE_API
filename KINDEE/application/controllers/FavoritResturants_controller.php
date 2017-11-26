@@ -47,7 +47,7 @@ class FavoritResturants_controller extends CI_Controller {
         foreach($result->result() as $row){
             array_push($arr,$row);
         }
-        echo $result->num_rows();
+        //echo $result->num_rows();
         echo json_encode($arr);
     }
 
