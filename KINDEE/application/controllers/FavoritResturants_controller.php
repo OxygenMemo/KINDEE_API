@@ -37,7 +37,7 @@ class FavoritResturants_controller extends CI_Controller {
         echo json_encode($status);
     }
     public function getFavoriteWithUser_id(){
-        $User_id = $this->input->post("User_Id");
+        $User_id = $this->input->post("User_id");
         $this->load->model("FavoritResturants");
         $FavoritResturants = $this->FavoritResturants;
         $FavoritResturants->User_id = $User_id;
