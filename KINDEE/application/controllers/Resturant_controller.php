@@ -91,8 +91,11 @@ class Resturant_controller extends CI_Controller{
                 $obj = new obj();
                 $obj->startlength = $sum;
 
-                $sum+=$row->Rate_number;
-
+                if($row->Rate_number != null){
+                    $sum+=$row->Rate_number;
+                }else{
+                    $sum+=1;
+                }
                 $obj->endlength = $sum;
                 $obj->Res_id = $row->Res_id;
                 $obj->Rate_number = $row->Rate_number;
